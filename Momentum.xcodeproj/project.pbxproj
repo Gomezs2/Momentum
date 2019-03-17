@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C34498AC38EE4637982F65 /* libPods-MomentumUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */; };
+		1C649BCCE0CE26C8247A1EE9 /* Pods_Momentum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */; };
+		2FC7D8CE680DF0FBF9B37A1F /* libPods-MomentumTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */; };
+		5062F553223DFA0000946292 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5062F552223DFA0000946292 /* README.md */; };
 		50D487F82239B52500CC1214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D487F72239B52500CC1214 /* AppDelegate.swift */; };
-		50D487FA2239B52500CC1214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D487F92239B52500CC1214 /* ViewController.swift */; };
+		50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D487F92239B52500CC1214 /* WelcomeViewController.swift */; };
 		50D487FD2239B52500CC1214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D487FB2239B52500CC1214 /* Main.storyboard */; };
 		50D487FF2239B52600CC1214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D487FE2239B52600CC1214 /* Assets.xcassets */; };
 		50D488022239B52600CC1214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D488002239B52600CC1214 /* LaunchScreen.storyboard */; };
@@ -34,9 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C92F7F76FB5C2E9A7030D62 /* Pods-MomentumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.release.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3BA12013CA1953B99CDD090C /* Pods-Momentum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.debug.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.debug.xcconfig"; sourceTree = "<group>"; };
+		5062F552223DFA0000946292 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50D487F42239B52500CC1214 /* Momentum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momentum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D487F72239B52500CC1214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50D487F92239B52500CC1214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50D487F92239B52500CC1214 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		50D487FC2239B52500CC1214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50D487FE2239B52600CC1214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50D488012239B52600CC1214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		50D488132239B52700CC1214 /* MomentumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D488172239B52700CC1214 /* MomentumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentumUITests.swift; sourceTree = "<group>"; };
 		50D488192239B52700CC1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E7B2F247E99EAD9BBE6978 /* Pods-MomentumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumTests.release.xcconfig"; path = "Target Support Files/Pods-MomentumTests/Pods-MomentumTests.release.xcconfig"; sourceTree = "<group>"; };
+		81CF62B09A9B8E6DC3381057 /* Pods-MomentumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumTests.debug.xcconfig"; path = "Target Support Files/Pods-MomentumTests/Pods-MomentumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Momentum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.release.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.release.xcconfig"; sourceTree = "<group>"; };
+		EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C649BCCE0CE26C8247A1EE9 /* Pods_Momentum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC7D8CE680DF0FBF9B37A1F /* libPods-MomentumTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +84,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C34498AC38EE4637982F65 /* libPods-MomentumUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16AA2F77E1BB7CF38130E5AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */,
+				5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */,
+				5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23BD55758B9DA765D73B8BB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BA12013CA1953B99CDD090C /* Pods-Momentum.debug.xcconfig */,
+				D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */,
+				81CF62B09A9B8E6DC3381057 /* Pods-MomentumTests.debug.xcconfig */,
+				77E7B2F247E99EAD9BBE6978 /* Pods-MomentumTests.release.xcconfig */,
+				EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */,
+				0C92F7F76FB5C2E9A7030D62 /* Pods-MomentumUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5062F54C223DF8BC00946292 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5062F54D223DF8CF00946292 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50D488002239B52600CC1214 /* LaunchScreen.storyboard */,
+				50D487FB2239B52500CC1214 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5062F54E223DF8D700946292 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50D487F72239B52500CC1214 /* AppDelegate.swift */,
+				50D487F92239B52500CC1214 /* WelcomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5062F54F223DF8DF00946292 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50D488032239B52600CC1214 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		50D487EB2239B52500CC1214 = {
 			isa = PBXGroup;
 			children = (
+				5062F552223DFA0000946292 /* README.md */,
 				50D487F62239B52500CC1214 /* Momentum */,
 				50D4880B2239B52600CC1214 /* MomentumTests */,
 				50D488162239B52700CC1214 /* MomentumUITests */,
 				50D487F52239B52500CC1214 /* Products */,
+				23BD55758B9DA765D73B8BB8 /* Pods */,
+				16AA2F77E1BB7CF38130E5AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +173,11 @@
 		50D487F62239B52500CC1214 /* Momentum */ = {
 			isa = PBXGroup;
 			children = (
-				50D487F72239B52500CC1214 /* AppDelegate.swift */,
-				50D487F92239B52500CC1214 /* ViewController.swift */,
-				50D487FB2239B52500CC1214 /* Main.storyboard */,
+				5062F54C223DF8BC00946292 /* Model */,
+				5062F54D223DF8CF00946292 /* View */,
+				5062F54E223DF8D700946292 /* Controller */,
+				5062F54F223DF8DF00946292 /* Supporting Files */,
 				50D487FE2239B52600CC1214 /* Assets.xcassets */,
-				50D488002239B52600CC1214 /* LaunchScreen.storyboard */,
-				50D488032239B52600CC1214 /* Info.plist */,
 			);
 			path = Momentum;
 			sourceTree = "<group>";
@@ -132,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50D4881C2239B52700CC1214 /* Build configuration list for PBXNativeTarget "Momentum" */;
 			buildPhases = (
+				60F22A5BC15CD64ED41B3E76 /* [CP] Check Pods Manifest.lock */,
 				50D487F02239B52500CC1214 /* Sources */,
 				50D487F12239B52500CC1214 /* Frameworks */,
 				50D487F22239B52500CC1214 /* Resources */,
+				2D9FA1B274FCFA290C94D36F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50D4881F2239B52700CC1214 /* Build configuration list for PBXNativeTarget "MomentumTests" */;
 			buildPhases = (
+				FB0D8AD5533ADA9CA63431CD /* [CP] Check Pods Manifest.lock */,
 				50D488042239B52600CC1214 /* Sources */,
 				50D488052239B52600CC1214 /* Frameworks */,
 				50D488062239B52600CC1214 /* Resources */,
@@ -167,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50D488222239B52700CC1214 /* Build configuration list for PBXNativeTarget "MomentumUITests" */;
 			buildPhases = (
+				70B51A3DA5B31C5C4C349875 /* [CP] Check Pods Manifest.lock */,
 				50D4880F2239B52700CC1214 /* Sources */,
 				50D488102239B52700CC1214 /* Frameworks */,
 				50D488112239B52700CC1214 /* Resources */,
@@ -231,6 +310,7 @@
 			files = (
 				50D488022239B52600CC1214 /* LaunchScreen.storyboard in Resources */,
 				50D487FF2239B52600CC1214 /* Assets.xcassets in Resources */,
+				5062F553223DFA0000946292 /* README.md in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +331,113 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D9FA1B274FCFA290C94D36F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Momentum/Pods-Momentum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Momentum/Pods-Momentum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60F22A5BC15CD64ED41B3E76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Momentum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70B51A3DA5B31C5C4C349875 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MomentumUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB0D8AD5533ADA9CA63431CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MomentumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50D487F02239B52500CC1214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D487FA2239B52500CC1214 /* ViewController.swift in Sources */,
+				50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */,
 				50D487F82239B52500CC1214 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,10 +611,11 @@
 		};
 		50D4881D2239B52700CC1214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA12013CA1953B99CDD090C /* Pods-Momentum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Momentum/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Momentum/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,10 +629,11 @@
 		};
 		50D4881E2239B52700CC1214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Momentum/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Momentum/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +647,7 @@
 		};
 		50D488202239B52700CC1214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81CF62B09A9B8E6DC3381057 /* Pods-MomentumTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +668,7 @@
 		};
 		50D488212239B52700CC1214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E7B2F247E99EAD9BBE6978 /* Pods-MomentumTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +689,7 @@
 		};
 		50D488232239B52700CC1214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +709,7 @@
 		};
 		50D488242239B52700CC1214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C92F7F76FB5C2E9A7030D62 /* Pods-MomentumUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
