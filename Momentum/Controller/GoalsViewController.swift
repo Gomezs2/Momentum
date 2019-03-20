@@ -8,26 +8,38 @@
 
 import UIKit
 
-class GoalsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+struct Goal {
+    let title : String
+    let progress : Int
+}
+
+class GoalsViewController: UIViewController, UITableViewDataSource {
     
-    let goals_list = ["Goal1", "Goal2", "Goal3", "Goal4", "Goal5"]
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (goals_list.count)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        
-        return(cell)
-    }   
+    @IBOutlet private weak var tableView: UITableView!
+    private var data = [Goal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data = [Goal.init(title : "Title", progress : 50)]
+        
+        self.tableView.register(GoalCell.self, forCellReuseIdentifier: "custom")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! GoalCell
+        cell.title = data[indexPath.row].title
+        cell.progress = data[indexPath.row].progress
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
     
 }
