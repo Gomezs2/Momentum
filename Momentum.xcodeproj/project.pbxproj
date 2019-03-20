@@ -20,6 +20,7 @@
 		50D488182239B52700CC1214 /* MomentumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D488172239B52700CC1214 /* MomentumUITests.swift */; };
 		50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782DF2240A8E4003C4541 /* SignUpViewController.swift */; };
 		50E782E22240A999003C4541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782E12240A999003C4541 /* LoginViewController.swift */; };
+		50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50E782E32240B174003C4541 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		50D488192239B52700CC1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E782DF2240A8E4003C4541 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		50E782E12240A999003C4541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50E782E32240B174003C4541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E7B2F247E99EAD9BBE6978 /* Pods-MomentumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumTests.release.xcconfig"; path = "Target Support Files/Pods-MomentumTests/Pods-MomentumTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				50D488032239B52600CC1214 /* Info.plist */,
+				50E782E32240B174003C4541 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				50D488022239B52600CC1214 /* LaunchScreen.storyboard in Resources */,
 				50D487FF2239B52600CC1214 /* Assets.xcassets in Resources */,
+				50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */,
 				5062F553223DFA0000946292 /* README.md in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
 			);

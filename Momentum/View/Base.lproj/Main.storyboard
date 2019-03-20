@@ -82,11 +82,27 @@
                     <connections>
                         <outlet property="emailTextField" destination="0T0-Nj-ieQ" id="K9p-nV-K3C"/>
                         <outlet property="passwordTextField" destination="gfO-Vg-p8R" id="bVY-f5-bDz"/>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="SRF-m2-Y0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfD-7w-Uci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270" y="428"/>
+        </scene>
+        <!--Goal-->
+        <scene sceneID="d19-8W-b4c">
+            <objects>
+                <viewController id="NW3-6A-Sa5" userLabel="Goal" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eZd-11-bi7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bol-OA-0G9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="94"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
@@ -322,6 +338,7 @@
                         <outlet property="lastNameTextField" destination="cYn-fB-b2R" id="eQp-hK-LGM"/>
                         <outlet property="passwordTextField" destination="9Vh-0L-ZoS" id="sHU-N6-R6F"/>
                         <outlet property="rePasswordTextField" destination="Q2G-EC-Mrl" id="MjO-0h-V5I"/>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="GMf-ap-2jW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njx-85-et7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,4 +364,7 @@
             <point key="canvasLocation" x="-351" y="71"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SRF-m2-Y0C"/>
+    </inferredMetricsTieBreakers>
 </document>

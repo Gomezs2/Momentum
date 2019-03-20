@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -18,20 +20,26 @@ class LoginViewController: UIViewController {
 
     }
     
+    func createAlert(errorMessage: String){
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
 
     @IBAction func loginPressed(_ sender: Any) {
+        SVProgressHUD.show()
         
+        // Log in the user
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
+            (user, error) in
+            if error == nil {
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "goToGoals", sender: self)
+            }
+            else{
+                SVProgressHUD.dismiss()
+                self.createAlert(errorMessage: error!.localizedDescription)
+            }
+        }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
