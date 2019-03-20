@@ -18,6 +18,9 @@
 		50D488022239B52600CC1214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D488002239B52600CC1214 /* LaunchScreen.storyboard */; };
 		50D4880D2239B52600CC1214 /* MomentumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D4880C2239B52600CC1214 /* MomentumTests.swift */; };
 		50D488182239B52700CC1214 /* MomentumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D488172239B52700CC1214 /* MomentumUITests.swift */; };
+		50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782DF2240A8E4003C4541 /* SignUpViewController.swift */; };
+		50E782E22240A999003C4541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782E12240A999003C4541 /* LoginViewController.swift */; };
+		50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50E782E32240B174003C4541 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		50D488132239B52700CC1214 /* MomentumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D488172239B52700CC1214 /* MomentumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentumUITests.swift; sourceTree = "<group>"; };
 		50D488192239B52700CC1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E782DF2240A8E4003C4541 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		50E782E12240A999003C4541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50E782E32240B174003C4541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MomentumUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E7B2F247E99EAD9BBE6978 /* Pods-MomentumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumTests.release.xcconfig"; path = "Target Support Files/Pods-MomentumTests/Pods-MomentumTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 			children = (
 				50D487F72239B52500CC1214 /* AppDelegate.swift */,
 				50D487F92239B52500CC1214 /* WelcomeViewController.swift */,
+				50E782DF2240A8E4003C4541 /* SignUpViewController.swift */,
+				50E782E12240A999003C4541 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				50D488032239B52600CC1214 /* Info.plist */,
+				50E782E32240B174003C4541 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -272,13 +281,16 @@
 				TargetAttributes = {
 					50D487F32239B52500CC1214 = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 					50D488072239B52600CC1214 = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 50D487F32239B52500CC1214;
 					};
 					50D488122239B52700CC1214 = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 50D487F32239B52500CC1214;
 					};
 				};
@@ -310,6 +322,7 @@
 			files = (
 				50D488022239B52600CC1214 /* LaunchScreen.storyboard in Resources */,
 				50D487FF2239B52600CC1214 /* Assets.xcassets in Resources */,
+				50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */,
 				5062F553223DFA0000946292 /* README.md in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
 			);
@@ -437,6 +450,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E782E22240A999003C4541 /* LoginViewController.swift in Sources */,
+				50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */,
 				50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */,
 				50D487F82239B52500CC1214 /* AppDelegate.swift in Sources */,
 			);
@@ -603,8 +618,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -615,11 +629,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 447MRFBT8R;
 				INFOPLIST_FILE = "$(SRCROOT)/Momentum/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.Momentum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -633,11 +645,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 447MRFBT8R;
 				INFOPLIST_FILE = "$(SRCROOT)/Momentum/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.Momentum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -653,11 +663,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomentumTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.MomentumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -674,11 +680,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomentumTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.MomentumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -694,11 +696,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomentumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.MomentumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -714,11 +712,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MomentumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.triceratops.MomentumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
