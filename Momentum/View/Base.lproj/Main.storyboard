@@ -84,7 +84,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="0T0-Nj-ieQ" id="K9p-nV-K3C"/>
                         <outlet property="passwordTextField" destination="gfO-Vg-p8R" id="bVY-f5-bDz"/>
-                        <segue destination="EYy-eV-Aq1" kind="show" identifier="goToGoals" id="SRF-m2-Y0C"/>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="KiP-lS-aax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfD-7w-Uci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2880.8000000000002" y="88.669950738916256"/>
+            <point key="canvasLocation" x="2126" y="67"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkB-39-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589.5999999999999" y="88.669950738916256"/>
+            <point key="canvasLocation" x="2860" y="71"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
@@ -442,7 +442,7 @@
                         <outlet property="lastNameTextField" destination="cYn-fB-b2R" id="eQp-hK-LGM"/>
                         <outlet property="passwordTextField" destination="9Vh-0L-ZoS" id="sHU-N6-R6F"/>
                         <outlet property="rePasswordTextField" destination="Q2G-EC-Mrl" id="MjO-0h-V5I"/>
-                        <segue destination="EYy-eV-Aq1" kind="show" identifier="goToGoals" id="GMf-ap-2jW"/>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="toGoal" id="22F-Q9-L0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njx-85-et7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -467,27 +467,8 @@
             </objects>
             <point key="canvasLocation" x="-351" y="71"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="47U-4X-sfD">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xbR-u2-uBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem title="Item" id="hp4-ZD-V5D"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EYy-eV-Aq1" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oMc-6k-Ekm">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NW3-6A-Sa5" kind="relationship" relationship="rootViewController" id="Oyd-vD-s9l"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="2185" y="89"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SRF-m2-Y0C"/>
+        <segue reference="22F-Q9-L0U"/>
     </inferredMetricsTieBreakers>
 </document>
