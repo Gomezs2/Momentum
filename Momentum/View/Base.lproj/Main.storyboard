@@ -143,6 +143,9 @@
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="hBK-0h-h7t" kind="show" id="zvu-D9-hmW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAW-3A-ZxO">
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="71"/>
@@ -393,6 +396,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qrl-1R-Iti"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Upg-yu-MyP" id="jZS-Bo-knk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuR-Gc-zgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

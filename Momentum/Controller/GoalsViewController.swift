@@ -10,31 +10,35 @@ import UIKit
 
 struct Goal {
     let title : String
-    let progress : Int
+    let progress : Float
 }
 
-class GoalsViewController: UIViewController, UITableViewDataSource {
+class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet private weak var tableView: UITableView!
     private var data = [Goal]()
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("1")
+        self.title = "GoalsTableView"
         
-        data = [Goal.init(title : "Title", progress : 50)]
+        data = [Goal.init(title : "Title", progress : 50),
+                Goal.init(title : "Go to Gym", progress : 30),
+                Goal.init(title : "Momentum Project", progress: 10)]
         
-        self.tableView.register(GoalCell.self, forCellReuseIdentifier: "custom")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        tableView.delegate = self
+        tableView.dataSource = self
+        print("2")
+        
+        let nibName = UINib(nibName: "GoalsTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "GoalsTableViewCell")
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! GoalCell
-        cell.title = data[indexPath.row].title
-        cell.progress = data[indexPath.row].progress
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalsTableViewCell", for: indexPath) as! GoalsTableViewCell
         
+        cell.commonInit(name: data[indexPath.item].title)
         return cell
     }
     
