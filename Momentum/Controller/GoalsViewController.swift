@@ -14,10 +14,10 @@ struct Goal {
 }
 
 class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
     
     private var data = [Goal]()
     
-    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("1")
