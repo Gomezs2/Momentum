@@ -82,24 +82,36 @@
             </objects>
             <point key="canvasLocation" x="1270" y="428"/>
         </scene>
-        <!--Goal-->
+        <!--GoalsView-->
         <scene sceneID="d19-8W-b4c">
             <objects>
-                <viewController title="Goals" id="NW3-6A-Sa5" userLabel="Goal" sceneMemberID="viewController">
+                <viewController title="Goals" id="NW3-6A-Sa5" userLabel="GoalsView" customClass="GoalsViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZd-11-bi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-h7-HJT">
-                                <rect key="frame" x="133" y="302" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Single Goal"/>
-                                <connections>
-                                    <segue destination="5Kp-Cr-dKY" kind="show" id="2t4-DY-WWI"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TlS-bj-H69">
+                                <rect key="frame" x="16" y="88" width="343" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" id="Ie2-7B-d7R">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ie2-7B-d7R" id="Zxd-Lh-U2y">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="leading" secondItem="Bol-OA-0G9" secondAttribute="leading" constant="16" id="Jk3-iZ-5II"/>
+                            <constraint firstItem="Bol-OA-0G9" firstAttribute="trailing" secondItem="TlS-bj-H69" secondAttribute="trailing" constant="16" id="drz-1t-J4P"/>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="bottom" secondItem="Bol-OA-0G9" secondAttribute="bottom" id="kc0-6m-X17"/>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="top" secondItem="Bol-OA-0G9" secondAttribute="top" id="yNM-Vo-NIw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bol-OA-0G9"/>
                     </view>
                     <toolbarItems/>
@@ -111,10 +123,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalsTableView" destination="TlS-bj-H69" id="E3G-qe-1Mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="67"/>
+            <point key="canvasLocation" x="2125.5999999999999" y="66.502463054187189"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
