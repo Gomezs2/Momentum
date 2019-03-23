@@ -26,10 +26,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P2S-Gp-Ynu">
+                        <rect key="frame" x="126" y="21" width="150" height="2"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </progressView>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="progress" destination="P2S-Gp-Ynu" id="9Xk-Rl-FPQ"/>
                 <outlet property="title" destination="8gg-P5-b0I" id="s5z-qs-ekv"/>
             </connections>
             <point key="canvasLocation" x="140.80000000000001" y="146.62668665667167"/>
