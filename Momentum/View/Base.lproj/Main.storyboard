@@ -82,24 +82,36 @@
             </objects>
             <point key="canvasLocation" x="1270" y="428"/>
         </scene>
-        <!--Goal-->
+        <!--GoalsView-->
         <scene sceneID="d19-8W-b4c">
             <objects>
-                <viewController title="Goals" id="NW3-6A-Sa5" userLabel="Goal" sceneMemberID="viewController">
+                <viewController title="Goals" id="NW3-6A-Sa5" userLabel="GoalsView" customClass="GoalsViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZd-11-bi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-h7-HJT">
-                                <rect key="frame" x="133" y="302" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Single Goal"/>
-                                <connections>
-                                    <segue destination="5Kp-Cr-dKY" kind="show" id="2t4-DY-WWI"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TlS-bj-H69">
+                                <rect key="frame" x="16" y="88" width="343" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" id="Ie2-7B-d7R">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ie2-7B-d7R" id="Zxd-Lh-U2y">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="leading" secondItem="Bol-OA-0G9" secondAttribute="leading" constant="16" id="Jk3-iZ-5II"/>
+                            <constraint firstItem="Bol-OA-0G9" firstAttribute="trailing" secondItem="TlS-bj-H69" secondAttribute="trailing" constant="16" id="drz-1t-J4P"/>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="bottom" secondItem="Bol-OA-0G9" secondAttribute="bottom" id="kc0-6m-X17"/>
+                            <constraint firstItem="TlS-bj-H69" firstAttribute="top" secondItem="Bol-OA-0G9" secondAttribute="top" id="yNM-Vo-NIw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bol-OA-0G9"/>
                     </view>
                     <toolbarItems/>
@@ -111,21 +123,25 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalsTableView" destination="TlS-bj-H69" id="E3G-qe-1Mn"/>
+                        <segue destination="5Kp-Cr-dKY" kind="show" identifier="goToSingleGoal" id="A4H-MO-8Zu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="67"/>
+            <point key="canvasLocation" x="2122" y="93"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
             <objects>
-                <viewController title="SingleGoal" id="5Kp-Cr-dKY" sceneMemberID="viewController">
+                <viewController title="SingleGoal" id="5Kp-Cr-dKY" customClass="SingleGoalViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkZ-la-c42">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-JJ-5dv">
-                                <rect key="frame" x="67" y="144" width="240" height="92"/>
+                                <rect key="frame" x="67" y="138" width="240" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p5c-4X-sgw">
@@ -433,7 +449,7 @@
         <!--Create Goal-->
         <scene sceneID="ld8-8T-jgw">
             <objects>
-                <viewController title="Create Goal" id="WFq-S8-DFU" sceneMemberID="viewController">
+                <viewController title="Create Goal" id="WFq-S8-DFU" customClass="CreateGoalViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGN-Eg-Au2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,8 +473,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yct-L5-18t">
-                                <rect key="frame" x="34" y="194" width="71" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yct-L5-18t">
+                                <rect key="frame" x="34" y="175" width="71" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="C0G-ta-9jO"/>
                                     <constraint firstAttribute="height" constant="21" id="SOI-vv-uBg"/>
@@ -467,8 +483,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jja-3q-n8e">
-                                <rect key="frame" x="34" y="360" width="360" height="106"/>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jja-3q-n8e">
+                                <rect key="frame" x="15" y="330" width="360" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="hKY-PF-oTw"/>
                                     <constraint firstAttribute="height" constant="106" id="hSr-Sa-2Rf"/>
@@ -477,27 +493,21 @@
                                     <!--2019-03-21 01:00:59 +0000-->
                                 </date>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-LG-uXQ">
-                                <rect key="frame" x="34" y="223" width="360" height="100"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-LG-uXQ">
+                                <rect key="frame" x="7" y="204" width="360" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="cYD-JL-x8l"/>
                                     <constraint firstAttribute="width" constant="360" id="ewF-TG-JbL"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzD-YP-uOi">
-                                <rect key="frame" x="30" y="331" width="79" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzD-YP-uOi">
+                                <rect key="frame" x="26" y="301" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-wT-aRX">
-                                <rect key="frame" x="34" y="390" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-vp-qf9">
-                                <rect key="frame" x="34" y="419" width="360" height="95"/>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-vp-qf9">
+                                <rect key="frame" x="7" y="476" width="360" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="VW5-Qr-9GB"/>
                                     <constraint firstAttribute="height" constant="95" id="bM1-Wq-fpV"/>
@@ -506,15 +516,15 @@
                                     <!--2019-03-21 01:02:23 +0000-->
                                 </date>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBd-X0-2YZ">
-                                <rect key="frame" x="34" y="551" width="360" height="92"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBd-X0-2YZ">
+                                <rect key="frame" x="7" y="618" width="360" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="Fg4-eR-LL8"/>
                                     <constraint firstAttribute="width" constant="360" id="x3G-Yk-5UO"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P73-y3-lgr">
-                                <rect key="frame" x="34" y="522" width="54" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P73-y3-lgr">
+                                <rect key="frame" x="7" y="589" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -566,6 +576,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-wT-aRX">
+                                <rect key="frame" x="26" y="447" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -600,8 +616,20 @@
                         <viewLayoutGuide key="safeArea" id="NJ5-6A-t0f"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Goal" id="4we-Oh-ix2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="Ir6-03-Sjw"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="Ir6-03-Sjw">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="WFq-S8-DFU" id="4C6-4i-gWj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="Ir6-03-Sjw" id="a3C-l0-sx7"/>
+                        <outlet property="goalCategory" destination="YWZ-LG-uXQ" id="jhD-St-3bF"/>
+                        <outlet property="goalEndDate" destination="LPu-vp-qf9" id="H15-c0-GQL"/>
+                        <outlet property="goalName" destination="sC9-hx-b31" id="vaW-Pv-frF"/>
+                        <outlet property="goalRepeatOption" destination="BBd-X0-2YZ" id="bE3-dv-Z8q"/>
+                        <outlet property="goalStartDate" destination="jja-3q-n8e" id="2Hm-16-Byl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-nw-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
