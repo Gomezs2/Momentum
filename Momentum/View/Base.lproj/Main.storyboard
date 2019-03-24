@@ -120,9 +120,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ie2-7B-d7R" id="Zxd-Lh-U2y">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lsu-b2-wYu" id="U2Q-z0-vnW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -148,7 +145,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="5Kp-Cr-dKY" kind="show" id="zXL-rE-wG4"/>
+                        <outlet property="goalsTableView" destination="TlS-bj-H69" id="E3G-qe-1Mn"/>
+                        <segue destination="5Kp-Cr-dKY" kind="show" identifier="goToSingleGoal" id="A4H-MO-8Zu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
