@@ -5,19 +5,18 @@
 //  Created by Sergio Gomez on 3/19/19.
 //  Copyright © 2019 Triceratops. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     func createAlert(errorMessage: String){
@@ -25,7 +24,7 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
-
+    
     @IBAction func loginPressed(_ sender: Any) {
         SVProgressHUD.show()
         
