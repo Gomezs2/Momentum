@@ -13,7 +13,8 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var goalsTableView: UITableView!
     
     var goalArray : [Goal] = [Goal]()
-
+    var rowChoosen = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,11 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     // Declare number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goalArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowChoosen = indexPath.row
+        performSegue(withIdentifier: "goToSingleGoal", sender: self)
     }
     
     func retrieveMessages() {
@@ -66,5 +72,11 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSingleGoal"{
+            let destVC = segue.destination as! SingleGoalViewController
+            destVC.goalData = goalArray[rowChoosen]
+        }
+    }
     
 }

@@ -125,22 +125,23 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="goalsTableView" destination="TlS-bj-H69" id="E3G-qe-1Mn"/>
+                        <segue destination="5Kp-Cr-dKY" kind="show" identifier="goToSingleGoal" id="A4H-MO-8Zu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2125.5999999999999" y="66.502463054187189"/>
+            <point key="canvasLocation" x="2122" y="93"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
             <objects>
-                <viewController title="SingleGoal" id="5Kp-Cr-dKY" sceneMemberID="viewController">
+                <viewController title="SingleGoal" id="5Kp-Cr-dKY" customClass="SingleGoalViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkZ-la-c42">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-JJ-5dv">
-                                <rect key="frame" x="67" y="144" width="240" height="92"/>
+                                <rect key="frame" x="67" y="138" width="240" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p5c-4X-sgw">
