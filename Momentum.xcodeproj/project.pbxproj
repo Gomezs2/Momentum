@@ -21,6 +21,7 @@
 		50D488182239B52700CC1214 /* MomentumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D488172239B52700CC1214 /* MomentumUITests.swift */; };
 		50E0804C2246C61D00FB7DBF /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0804A2246C61D00FB7DBF /* GoalsTableViewCell.swift */; };
 		50E0804D2246C61D00FB7DBF /* GoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E0804B2246C61D00FB7DBF /* GoalCell.xib */; };
+		50E0804F2246CE5E00FB7DBF /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */; };
 		50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782DF2240A8E4003C4541 /* SignUpViewController.swift */; };
 		50E782E22240A999003C4541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782E12240A999003C4541 /* LoginViewController.swift */; };
 		50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50E782E32240B174003C4541 /* GoogleService-Info.plist */; };
@@ -63,6 +64,7 @@
 		50D488192239B52700CC1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E0804A2246C61D00FB7DBF /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		50E0804B2246C61D00FB7DBF /* GoalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalCell.xib; sourceTree = "<group>"; };
+		50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		50E782DF2240A8E4003C4541 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		50E782E12240A999003C4541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50E782E32240B174003C4541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,9 +138,9 @@
 		5062F54D223DF8CF00946292 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				50E080492246C60C00FB7DBF /* CustomCell */,
 				50D488002239B52600CC1214 /* LaunchScreen.storyboard */,
 				50D487FB2239B52500CC1214 /* Main.storyboard */,
+				50E080492246C60C00FB7DBF /* CustomCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,10 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				50D487F72239B52500CC1214 /* AppDelegate.swift */,
+				501E54872246B8CF00C18B0F /* GoalsViewController.swift */,
+				50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */,
 				50D487F92239B52500CC1214 /* WelcomeViewController.swift */,
 				50E782DF2240A8E4003C4541 /* SignUpViewController.swift */,
 				50E782E12240A999003C4541 /* LoginViewController.swift */,
-				501E54872246B8CF00C18B0F /* GoalsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E0804C2246C61D00FB7DBF /* GoalsTableViewCell.swift in Sources */,
+				50E0804F2246CE5E00FB7DBF /* CreateGoalViewController.swift in Sources */,
 				50E782E22240A999003C4541 /* LoginViewController.swift in Sources */,
 				50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */,
 				50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */,
