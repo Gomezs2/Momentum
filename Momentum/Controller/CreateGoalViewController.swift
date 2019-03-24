@@ -106,8 +106,5 @@ class CreateGoalViewController: UIViewController {
         userInteractionEnabled(value: false)
         // Create unique goal id, add to goal table and user's goal setting
         createGoalID()
-        
     }
-    
-
 }

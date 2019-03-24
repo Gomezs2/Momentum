@@ -22,6 +22,7 @@
 		50E0804C2246C61D00FB7DBF /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0804A2246C61D00FB7DBF /* GoalsTableViewCell.swift */; };
 		50E0804D2246C61D00FB7DBF /* GoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E0804B2246C61D00FB7DBF /* GoalCell.xib */; };
 		50E0804F2246CE5E00FB7DBF /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */; };
+		50E0805122470EDD00FB7DBF /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0805022470EDC00FB7DBF /* Goal.swift */; };
 		50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782DF2240A8E4003C4541 /* SignUpViewController.swift */; };
 		50E782E22240A999003C4541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E782E12240A999003C4541 /* LoginViewController.swift */; };
 		50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50E782E32240B174003C4541 /* GoogleService-Info.plist */; };
@@ -65,6 +66,7 @@
 		50E0804A2246C61D00FB7DBF /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		50E0804B2246C61D00FB7DBF /* GoalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalCell.xib; sourceTree = "<group>"; };
 		50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		50E0805022470EDC00FB7DBF /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		50E782DF2240A8E4003C4541 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		50E782E12240A999003C4541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50E782E32240B174003C4541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		5062F54C223DF8BC00946292 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				50E0805022470EDC00FB7DBF /* Goal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E0805122470EDD00FB7DBF /* Goal.swift in Sources */,
 				50E0804C2246C61D00FB7DBF /* GoalsTableViewCell.swift in Sources */,
 				50E0804F2246CE5E00FB7DBF /* CreateGoalViewController.swift in Sources */,
 				50E782E22240A999003C4541 /* LoginViewController.swift in Sources */,

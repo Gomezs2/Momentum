@@ -7,16 +7,13 @@
 //
 
 import UIKit
-
-struct Goal {
-    let title : String
-    let progress : Float
-}
+import Firebase
 
 class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var goalsTableView: UITableView!
     
-    
+    var goalArray : [Goal] = [Goal]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,18 +22,49 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // Register .xib file
         goalsTableView.register(UINib(nibName: "GoalCell", bundle: nil), forCellReuseIdentifier: "customGoalCell")
+        
+        retrieveMessages()
+        goalsTableView.separatorStyle = .none
     }
     
     // Init cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customGoalCell", for: indexPath) as! GoalsTableViewCell
-        cell.title.text = "G1"
+        cell.title.text = goalArray[indexPath.row].name
         return cell
     }
     
-//    Declare number of rows
+    // Declare number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return goalArray.count
     }
+    
+    func retrieveMessages() {
+        let goalsDB = Database.database().reference().child("Goals")
+        //message will run whenever a new message is added to the messages database
+        goalsDB.observe(.childAdded) { (snapshot) in
+            //Check if this is currentUser's goal
+            let keyArray = snapshot.key.split(separator: ":")
+            let userID = String(keyArray.first!)
+    
+            if userID != Auth.auth().currentUser?.uid {
+                return
+            }
+            
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            let goalName = snapshotValue["name"]!
+            let goalCategory = snapshotValue["category"]!
+            let goalStartDate = snapshotValue["startDate"]!
+            let goalEndDate = snapshotValue["endDate"]!
+            let goalRepeatOption = snapshotValue["goalRepeatOption"]!
+            
+            let goal = Goal(name: goalName, category: goalCategory, startDate: goalStartDate, endDate: goalEndDate, repeatOption: goalRepeatOption)
+
+            self.goalArray.append(goal)
+            self.goalsTableView.reloadData()
+        }
+        
+    }
+    
     
 }
