@@ -9,29 +9,71 @@
 import UIKit
 import Firebase
 
-class CreateGoalViewController: UIViewController {
+class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    
+    @IBOutlet var repetition: UIPickerView!
+    @IBOutlet var category: UIPickerView!
     @IBOutlet weak var goalName: UITextField!
-    @IBOutlet weak var goalCategory: UIPickerView!
     @IBOutlet weak var goalStartDate: UIDatePicker!
     @IBOutlet weak var goalEndDate: UIDatePicker!
-    @IBOutlet weak var goalRepeatOption: UIPickerView!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     var firstGoal = false
     var userGoals : [String : Any] = [:]
     
+    var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
+    var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
+    
+    var selectedCategory = "Default"
+    var selectedRepetition = "Never"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if (pickerView.tag == 1){
+            return categoryOptions.count
+        }
+        else{
+            return repetitionOptions.count
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if (pickerView.tag == 1){
+            return categoryOptions[row]
+        }
+        else{
+            return repetitionOptions[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if (pickerView.tag == 1){
+            selectedCategory = categoryOptions[row]
+        }
+        else{
+            selectedRepetition = repetitionOptions[row]
+        }
     }
     
     func userInteractionEnabled(value : Bool){
         doneButton.isEnabled = value
         goalName.isEnabled = value
-        goalCategory.isUserInteractionEnabled = value
+        category.isUserInteractionEnabled = value
         goalStartDate.isUserInteractionEnabled = value
         goalEndDate.isUserInteractionEnabled = value
-        goalRepeatOption.isUserInteractionEnabled = value
+        repetition.isUserInteractionEnabled = value
     }
     
     func updateUsersGoal(goalKey: String){
