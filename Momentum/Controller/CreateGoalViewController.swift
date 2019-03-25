@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
     
     @IBOutlet var repetition: UIPickerView!
     @IBOutlet var category: UIPickerView!
@@ -18,39 +17,36 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var goalStartDate: UIDatePicker!
     @IBOutlet weak var goalEndDate: UIDatePicker!
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    
     @IBOutlet var weekdayButtons: [UIButton]!
-    
-    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
-    
-    
-    
-    var firstGoal = false
-    var userGoals : [String : Any] = [:]
     
     var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
     var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
     
+    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
+    var firstGoal = false
+    var userGoals : [String : Any] = [:]
     var selectedCategory = "Default"
     var selectedRepetition = "Never"
+    var selectedStartDate = ""
+    var selectedEndDate = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
     @IBAction func startDateChanged(_ sender: Any) {
         let startDateFormatter = DateFormatter()
         startDateFormatter.dateStyle = DateFormatter.Style.short
-        let strStartDate = startDateFormatter.string( from: goalStartDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print(strStartDate)
+        selectedStartDate = startDateFormatter.string( from: goalStartDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        print(selectedStartDate)
     }
     
     @IBAction func endDateChanged(_ sender: Any) {
         let endDateFormatter = DateFormatter()
         endDateFormatter.dateStyle = DateFormatter.Style.short
-        let strEndDate = endDateFormatter.string( from: goalEndDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print(strEndDate)
+        selectedEndDate = endDateFormatter.string( from: goalEndDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        print(selectedEndDate)
     }
     
     
@@ -206,10 +202,10 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Once UIPicker's are init - update this code
         let goalData = [
             "name" : goalName.text!,
-            "category" : "UIPicker not init",
-            "startDate" : "UIPicker not init",
-            "endDate" : "UIPicker not init",
-            "goalRepeatOption" : "UIPicker not init"
+            "category" : selectedCategory,
+            "startDate" : selectedStartDate,
+            "endDate" : selectedEndDate,
+            "goalRepeatOption" : selectedRepetition,
         ]
         
         goalsDB.child(key).setValue(goalData) {
