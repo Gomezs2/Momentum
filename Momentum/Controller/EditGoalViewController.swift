@@ -1,64 +1,53 @@
 //
-//  CreateGoalViewController.swift
+//  EditGoalViewController.swift
 //  Momentum
 //
-//  Created by Sergio Gomez on 3/23/19.
+//  Created by Linnea Cajuste on 2019-03-24.
 //  Copyright © 2019 Triceratops. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditGoalViewController:
+    UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
-    @IBOutlet var repetition: UIPickerView!
-    @IBOutlet var category: UIPickerView!
-    @IBOutlet weak var goalName: UITextField!
-    @IBOutlet weak var goalStartDate: UIDatePicker!
-    @IBOutlet weak var goalEndDate: UIDatePicker!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
-    
+    @IBOutlet var goalName: UITextField! //TO DO set goal name to the user's previous goal name
+    @IBOutlet var categories: UIPickerView!
+    @IBOutlet var repetitions: UIPickerView!
     @IBOutlet var weekdayButtons: [UIButton]!
     
-    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
+    @IBOutlet var endDate: UIDatePicker!
+    @IBOutlet var startDate: UIDatePicker!
     
-    
-    
-    var firstGoal = false
-    var userGoals : [String : Any] = [:]
-    
-    var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
-    var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
-    
-    var selectedCategory = "Default"
-    var selectedRepetition = "Never"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
-    @IBAction func startDateChanged(_ sender: Any) {
+    @IBAction func startDateChanges(_ sender: Any) {
         let startDateFormatter = DateFormatter()
         startDateFormatter.dateStyle = DateFormatter.Style.short
-        let strStartDate = startDateFormatter.string( from: goalStartDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        let strStartDate = startDateFormatter.string( from: startDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
         print(strStartDate)
     }
     
-    @IBAction func endDateChanged(_ sender: Any) {
+    @IBAction func endDateChanges(_ sender: Any) {
         let endDateFormatter = DateFormatter()
         endDateFormatter.dateStyle = DateFormatter.Style.short
-        let strEndDate = endDateFormatter.string( from: goalEndDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        let strEndDate = endDateFormatter.string( from: endDate.date) ///strEndDate string stores the goal start date in MM/DD/YY
         print(strEndDate)
     }
     
     
-    //Set up categories and repeat picker views
+    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
+    
+    var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
+    var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
+    
+    //TO DO: change these variables to the user's previous choice
+    var selectedCategory = "Default"
+    var selectedRepetition = "Never"
+    
+    //handle categories and repeat picker views
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if (pickerView.tag == 1){
@@ -67,9 +56,7 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         else{
             return repetitionOptions.count
         }
-        
     }
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView.tag == 1){
@@ -79,7 +66,6 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
             return repetitionOptions[row]
         }
     }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if (pickerView.tag == 1){
@@ -107,8 +93,9 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
+    //handle weekday buttons at the bottom of the screen
     @IBAction func weekdayButtonPressed(_ sender: UIButton) {
-        //TO DO: add if statement to only enable if repetition = weekly
+        
         //adding days to daysSelected string
         //changing button colors based on state
         for button in weekdayButtons{
@@ -172,86 +159,21 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
-    func userInteractionEnabled(value : Bool){
-        doneButton.isEnabled = value
-        goalName.isEnabled = value
-        category.isUserInteractionEnabled = value
-        goalStartDate.isUserInteractionEnabled = value
-        goalEndDate.isUserInteractionEnabled = value
-        repetition.isUserInteractionEnabled = value
-    }
-    
-    func updateUsersGoal(goalKey: String){
-        let userID = Auth.auth().currentUser?.uid
-        let userDB =  Database.database().reference().child("Users").child(userID!)
-        
-        if self.firstGoal {
-            self.userGoals = [
-                goalKey : true
-            ]
-        }
-        else {
-            self.userGoals[goalKey] = true
-        }
-        
-        userDB.child("goals").setValue(self.userGoals)
-        self.userInteractionEnabled(value: true)
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func addGoal(userID: String, goalID: String){
-        let key = userID + ":" + goalID
-        let goalsDB = Database.database().reference().child("Goals")
-        
-        // Once UIPicker's are init - update this code
-        let goalData = [
-            "name" : goalName.text!,
-            "category" : "UIPicker not init",
-            "startDate" : "UIPicker not init",
-            "endDate" : "UIPicker not init",
-            "goalRepeatOption" : "UIPicker not init"
-        ]
-        
-        goalsDB.child(key).setValue(goalData) {
-            (error, reference) in
-            
-            if error != nil {
-                print(error!)
-            } else {
-                self.updateUsersGoal(goalKey: reference.key!)
-            }
-        }
-    }
-    
-    func createGoalID(){
-        let userID = Auth.auth().currentUser?.uid
-        let userDB =  Database.database().reference().child("Users").child(userID!)
-        
-        userDB.observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get users Data
-            let snapshotValue = snapshot.value as! NSDictionary
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-            // Check if this is first goal
-            var goalID = -1
-            if snapshotValue["goals"] is Bool{
-                self.firstGoal = true
-                goalID = 1
-                self.addGoal(userID: userID!, goalID: String(goalID))
-            }
-            else{
-                self.userGoals = (snapshotValue["goals"] as! NSDictionary) as! [String : Any]
-                goalID = (snapshotValue["goals"] as! NSDictionary).count + 1
-                self.addGoal(userID: userID!, goalID: String(goalID))
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        // Do any additional setup after loading the view.
     }
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        // Disable fields to that we dont duplicate send
-        userInteractionEnabled(value: false)
-        // Create unique goal id, add to goal table and user's goal setting
-        createGoalID()
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
