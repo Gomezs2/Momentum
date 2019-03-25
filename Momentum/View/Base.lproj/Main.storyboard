@@ -13,6 +13,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Noteworthy.ttc">
+            <string>Noteworthy-Bold</string>
+        </array>
         <array key="Optima.ttc">
             <string>Optima-Bold</string>
             <string>Optima-Regular</string>
@@ -112,7 +115,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="0T0-Nj-ieQ" id="K9p-nV-K3C"/>
                         <outlet property="passwordTextField" destination="gfO-Vg-p8R" id="bVY-f5-bDz"/>
-                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="KiP-lS-aax"/>
+                        <segue destination="Pfo-uR-hCk" kind="show" identifier="goWelcomeBack" id="otV-Ed-I14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfD-7w-Uci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="93"/>
+            <point key="canvasLocation" x="2238" y="-357"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
@@ -1126,8 +1129,38 @@
             </objects>
             <point key="canvasLocation" x="-351" y="71"/>
         </scene>
+        <!--Welcome Back-->
+        <scene sceneID="dQC-Vw-ZP2">
+            <objects>
+                <viewController id="Pfo-uR-hCk" userLabel="Welcome Back" customClass="WelcomeBackViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="6w8-oA-X5z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Back to Momentum!" textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2g-h9-8wC">
+                                <rect key="frame" x="37" y="88" width="300" height="412"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
+                        <viewLayoutGuide key="safeArea" id="h7t-j3-ZX7"/>
+                    </view>
+                    <connections>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="hYB-e8-w4y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHd-6F-orn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="428"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="22F-Q9-L0U"/>
+        <segue reference="hYB-e8-w4y"/>
     </inferredMetricsTieBreakers>
 </document>

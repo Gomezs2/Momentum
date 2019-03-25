@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             (user, error) in
             if error == nil {
                 SVProgressHUD.dismiss()
-                self.performSegue(withIdentifier: "goToGoals", sender: self)
+                self.performSegue(withIdentifier: "goWelcomeBack", sender: self)
             }
             else{
                 SVProgressHUD.dismiss()
