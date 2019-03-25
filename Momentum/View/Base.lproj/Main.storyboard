@@ -135,11 +135,10 @@
                         <viewLayoutGuide key="safeArea" id="Bol-OA-0G9"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Your Goals" id="Hj9-tA-Owi">
+                    <navigationItem key="navigationItem" title="Goals" id="Hj9-tA-Owi">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="oBr-oU-INJ">
                             <connections>
-                                <outlet property="goalsTableView" destination="TlS-bj-H69" id="E3G-qe-1Mn"/>
-                                <segue destination="5Kp-Cr-dKY" kind="show" identifier="goToSingleGoal" id="A4H-MO-8Zu"/>
+                                <segue destination="WFq-S8-DFU" kind="show" id="CMG-uV-Jef"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
