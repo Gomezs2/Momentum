@@ -24,7 +24,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Register .xib file
         goalsTableView.register(UINib(nibName: "GoalCell", bundle: nil), forCellReuseIdentifier: "customGoalCell")
         
-        retrieveMessages()
+        retrieveGoals()
         goalsTableView.separatorStyle = .none
     }
     
@@ -45,7 +45,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "goToSingleGoal", sender: self)
     }
     
-    func retrieveMessages() {
+    func retrieveGoals() {
         let goalsDB = Database.database().reference().child("Goals")
         //message will run whenever a new message is added to the messages database
         goalsDB.observe(.childAdded) { (snapshot) in
@@ -64,9 +64,50 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
             let goalEndDate = snapshotValue["endDate"]!
             let goalRepeatOption = snapshotValue["goalRepeatOption"]!
             
-            let goal = Goal(name: goalName, category: goalCategory, startDate: goalStartDate, endDate: goalEndDate, repeatOption: goalRepeatOption)
+            let goal = Goal(goalKey: snapshot.key, name: goalName, category: goalCategory, startDate: goalStartDate, endDate: goalEndDate, repeatOption: goalRepeatOption)
 
             self.goalArray.append(goal)
+            self.goalsTableView.reloadData()
+        }
+        
+        goalsDB.observe(.childRemoved) { (snapshot) in
+            //Check if this is currentUser's goal
+            let keyArray = snapshot.key.split(separator: ":")
+            let userID = String(keyArray.first!)
+            
+            if userID != Auth.auth().currentUser?.uid {
+                return
+            }
+            
+            for (index, goal) in self.goalArray.enumerated() {
+                if goal.key == snapshot.key {
+                    self.goalArray.remove(at: index)
+                    break
+                }
+            }
+            self.goalsTableView.reloadData()
+        }
+        
+        goalsDB.observe(.childChanged) { (snapshot) in
+            //Check if this is currentUser's goal
+            let keyArray = snapshot.key.split(separator: ":")
+            let userID = String(keyArray.first!)
+            
+            if userID != Auth.auth().currentUser?.uid {
+                return
+            }
+            
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            for goal in self.goalArray {
+                if goal.key == snapshot.key {
+                    goal.name = snapshotValue["name"]!
+                    goal.category = snapshotValue["category"]!
+                    goal.startDate = snapshotValue["startDate"]!
+                    goal.endDate = snapshotValue["endDate"]!
+                    goal.repeatOption = snapshotValue["goalRepeatOption"]!
+                    break
+                }
+            }
             self.goalsTableView.reloadData()
         }
         
