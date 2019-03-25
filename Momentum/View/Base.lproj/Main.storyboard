@@ -44,12 +44,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-                                    <action selector="loginPressed:" destination="TCY-0E-Whg" eventType="touchUpInside" id="5aB-Cs-6Ay"/>
-                                    <action selector="signupPressed:" destination="9Qj-uK-Wvc" eventType="touchUpInside" id="WdQ-hi-dfP"/>
-=======
                                     <action selector="loginPressed:" destination="TCY-0E-Whg" eventType="touchUpInside" id="jy8-85-m0J"/>
->>>>>>> master
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gfO-Vg-p8R">
@@ -78,13 +73,8 @@
                         <viewLayoutGuide key="safeArea" id="8Q9-8m-lze"/>
                     </view>
                     <connections>
-<<<<<<< HEAD
-                        <outlet property="emailTextField" destination="74Z-m5-1xo" id="gas-s8-aXW"/>
-                        <outlet property="passwordTextField" destination="BIQ-0m-NkH" id="wcX-cz-h7e"/>
-=======
                         <outlet property="emailTextField" destination="0T0-Nj-ieQ" id="K9p-nV-K3C"/>
                         <outlet property="passwordTextField" destination="gfO-Vg-p8R" id="bVY-f5-bDz"/>
->>>>>>> master
                         <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="KiP-lS-aax"/>
                     </connections>
                 </viewController>
