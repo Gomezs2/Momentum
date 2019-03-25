@@ -19,6 +19,12 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var goalEndDate: UIDatePicker!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
+    @IBOutlet var weekdayButtons: [UIButton]!
+    
+    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
+    
+    
+    
     var firstGoal = false
     var userGoals : [String : Any] = [:]
     
@@ -32,6 +38,23 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.viewDidLoad()
     }
     
+    
+    @IBAction func startDateChanged(_ sender: Any) {
+        let startDateFormatter = DateFormatter()
+        startDateFormatter.dateStyle = DateFormatter.Style.short
+        let strStartDate = startDateFormatter.string( from: goalStartDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        print(strStartDate)
+    }
+    
+    @IBAction func endDateChanged(_ sender: Any) {
+        let endDateFormatter = DateFormatter()
+        endDateFormatter.dateStyle = DateFormatter.Style.short
+        let strEndDate = endDateFormatter.string( from: goalEndDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        print(strEndDate)
+    }
+    
+    
+    //Set up categories and repeat picker views
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -61,9 +84,91 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         if (pickerView.tag == 1){
             selectedCategory = categoryOptions[row]
+            print(selectedCategory)
         }
         else{
             selectedRepetition = repetitionOptions[row]
+            print(selectedRepetition)
+            if selectedRepetition == "Weekly"{
+                for button in weekdayButtons{
+                    button.isEnabled = true
+                }
+            }else{
+                daysSelected = ""
+                for button in weekdayButtons{
+                    button.isEnabled = false
+                    if button.tag == 0 || button.tag == 2 || button.tag == 4 || button.tag == 6{
+                        button.backgroundColor = UIColor.blue
+                    }else{
+                        button.backgroundColor = UIColor.clear
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func weekdayButtonPressed(_ sender: UIButton) {
+        //TO DO: add if statement to only enable if repetition = weekly
+        //adding days to daysSelected string
+        //changing button colors based on state
+        for button in weekdayButtons{
+            if sender == button && button.backgroundColor !=  UIColor.gray{
+                button.backgroundColor = UIColor.gray
+                if sender.tag == 0{
+                    daysSelected += "S|"
+                }else if sender.tag == 1{
+                    daysSelected += "M|"
+                }else if sender.tag == 2{
+                    daysSelected += "T|"
+                }else if sender.tag == 3{
+                    daysSelected += "W|"
+                }else if sender.tag == 4{
+                    daysSelected += "R|"
+                }else if sender.tag == 5{
+                    daysSelected += "F|"
+                }else if sender.tag == 6{
+                    daysSelected += "X|" //using X for sunday to differentiate from S
+                }
+                
+            } else if sender == button && button.backgroundColor ==  UIColor.gray{
+                //TO DO add method to delete weekday from string
+                if sender.tag == 0 || sender.tag == 2 || sender.tag == 4 || sender.tag == 6{
+                    button.backgroundColor = UIColor.blue
+                }else{
+                    button.backgroundColor = UIColor.clear
+                }
+                if sender.tag == 0{
+                    deleteDays(day : "S|")
+                }else if sender.tag == 1{
+                    deleteDays(day : "M|")
+                }else if sender.tag == 2{
+                    deleteDays(day : "T|")
+                }else if sender.tag == 3{
+                    deleteDays(day : "W|")
+                }else if sender.tag == 4{
+                    deleteDays(day : "R|")
+                }else if sender.tag == 5{
+                    deleteDays(day : "F|")
+                }else if sender.tag == 6{
+                    deleteDays(day : "X|")//using X for sunday to differentiate from S
+                }
+            }
+        }
+        print(daysSelected)
+    }
+    
+    //deletes days from the selected weekday string
+    func deleteDays(day : String){
+        var present = false
+        for i in daysSelected{
+            let b = String(i)+"|"
+            if b == day{
+                daysSelected = daysSelected.replacingOccurrences(of: b, with: "", options: NSString.CompareOptions.literal, range: nil)
+                present = true
+            }
+        }
+        if present == false{
+            daysSelected += day
         }
     }
     

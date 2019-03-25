@@ -275,6 +275,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="574819313.94302702">
                                             <!--2019-03-21 00:01:53 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="startDateChanges:" destination="aj3-Xn-qvl" eventType="valueChanged" id="LJx-Oz-OpI"/>
+                                        </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz3-Ar-i1e">
                                         <rect key="frame" x="29" y="343" width="348" height="21"/>
@@ -291,6 +294,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="574659831.73797905">
                                             <!--2019-03-19 03:43:51 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="endDateChanges:" destination="aj3-Xn-qvl" eventType="valueChanged" id="XSN-L2-fPm"/>
+                                        </connections>
                                     </datePicker>
                                     <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cca-K7-vFr">
                                         <rect key="frame" x="170" y="111" width="207" height="76"/>
@@ -319,17 +325,20 @@
                                             <outlet property="delegate" destination="aj3-Xn-qvl" id="kN9-3I-Gds"/>
                                         </connections>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-Li-F7c">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-Li-F7c">
                                         <rect key="frame" x="80" y="616" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="fyN-IS-toW"/>
                                             <constraint firstAttribute="width" constant="38" id="n9W-5c-Sjy"/>
                                         </constraints>
                                         <state key="normal" title="M"/>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="h1j-Es-ytJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vY-Ym-VJB">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vY-Ym-VJB">
                                         <rect key="frame" x="134" y="616" width="38" height="38"/>
-                                        <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="Mvx-ek-ECl"/>
                                             <constraint firstAttribute="height" constant="38" id="mdC-le-Wq7"/>
@@ -337,18 +346,24 @@
                                         <state key="normal" title="T">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="Enz-bO-QxQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8H-3A-Y98">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8H-3A-Y98">
                                         <rect key="frame" x="188" y="616" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="DnQ-L4-xxn"/>
                                             <constraint firstAttribute="height" constant="38" id="Nmq-RC-2S3"/>
                                         </constraints>
                                         <state key="normal" title="W"/>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="Ivr-Tu-qK8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4O0-Wn-4xI">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4O0-Wn-4xI">
                                         <rect key="frame" x="242" y="616" width="38" height="38"/>
-                                        <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="nlv-Zh-69k"/>
                                             <constraint firstAttribute="width" constant="38" id="tl2-g0-wR5"/>
@@ -356,18 +371,24 @@
                                         <state key="normal" title="R">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="0eB-81-Pvy"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtL-zX-lRO">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtL-zX-lRO">
                                         <rect key="frame" x="296" y="616" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="x9C-rh-Q0M"/>
                                             <constraint firstAttribute="height" constant="38" id="xMY-Pe-YAK"/>
                                         </constraints>
                                         <state key="normal" title="F"/>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="MHQ-dC-D3R"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmI-e5-eN7">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmI-e5-eN7">
                                         <rect key="frame" x="350" y="616" width="38" height="38"/>
-                                        <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="ety-Y3-PTl"/>
                                             <constraint firstAttribute="width" constant="38" id="hyC-mz-PQC"/>
@@ -375,10 +396,13 @@
                                         <state key="normal" title="S">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="McM-Aj-c6c"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-Ob-Hze">
                                         <rect key="frame" x="26" y="616" width="38" height="38"/>
-                                        <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="aZG-2w-wWf"/>
                                             <constraint firstAttribute="width" constant="38" id="g6l-Ku-RFb"/>
@@ -386,6 +410,9 @@
                                         <state key="normal" title="S">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="weekdayButtonPressed:" destination="aj3-Xn-qvl" eventType="touchUpInside" id="MA1-wy-WdJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -451,7 +478,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categories" destination="Cca-K7-vFr" id="hIb-LD-N2u"/>
-                        <outlet property="repetitions" destination="XnU-KU-hJV" id="U3s-IO-h3b"/>
+                        <outlet property="endDate" destination="ai5-2Y-bby" id="rP6-kw-6Ne"/>
+                        <outlet property="goalName" destination="Zap-Kf-Xvc" id="QNm-EW-ioX"/>
+                        <outlet property="repetitions" destination="XnU-KU-hJV" id="Cb2-dj-f87"/>
+                        <outlet property="startDate" destination="xx9-qb-Mxk" id="mhh-m3-uv8"/>
+                        <outletCollection property="weekdayButtons" destination="Sk7-Ob-Hze" collectionClass="NSMutableArray" id="UGr-ao-78R"/>
+                        <outletCollection property="weekdayButtons" destination="MmI-e5-eN7" collectionClass="NSMutableArray" id="Goe-A1-lJH"/>
+                        <outletCollection property="weekdayButtons" destination="qtL-zX-lRO" collectionClass="NSMutableArray" id="Za4-h6-zHR"/>
+                        <outletCollection property="weekdayButtons" destination="4O0-Wn-4xI" collectionClass="NSMutableArray" id="iNZ-AL-cix"/>
+                        <outletCollection property="weekdayButtons" destination="x8H-3A-Y98" collectionClass="NSMutableArray" id="YIs-rh-2PG"/>
+                        <outletCollection property="weekdayButtons" destination="9vY-Ym-VJB" collectionClass="NSMutableArray" id="CG9-p4-KMX"/>
+                        <outletCollection property="weekdayButtons" destination="aFf-Li-F7c" collectionClass="NSMutableArray" id="EnN-GF-5VA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUR-Nv-cOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,6 +535,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="574822859.10025203">
                                     <!--2019-03-21 01:00:59 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="startDateChanged:" destination="WFq-S8-DFU" eventType="valueChanged" id="QSd-0d-Qzq"/>
+                                </connections>
                             </datePicker>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-LG-uXQ">
                                 <rect key="frame" x="199.33333333333337" y="121" width="195" height="100"/>
@@ -524,6 +564,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="574822943.55786598">
                                     <!--2019-03-21 01:02:23 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="endDateChanged:" destination="WFq-S8-DFU" eventType="valueChanged" id="sA8-02-oxp"/>
+                                </connections>
                             </datePicker>
                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBd-X0-2YZ">
                                 <rect key="frame" x="27" y="517" width="360" height="92"/>
@@ -542,17 +585,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPj-QT-QE0">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPj-QT-QE0">
                                 <rect key="frame" x="80" y="632" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="9c4-mN-8Cg"/>
                                     <constraint firstAttribute="width" constant="38" id="Cpm-QH-i5K"/>
                                 </constraints>
                                 <state key="normal" title="M"/>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="fpz-gk-NUG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUo-xr-7ye">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUo-xr-7ye">
                                 <rect key="frame" x="134" y="632" width="38" height="38"/>
-                                <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="9UF-6O-DVL"/>
                                     <constraint firstAttribute="height" constant="38" id="ZQ1-ol-py7"/>
@@ -560,18 +606,24 @@
                                 <state key="normal" title="T">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="yTh-oH-Cn3"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-VP-KrU">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-VP-KrU">
                                 <rect key="frame" x="188" y="632" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="58C-nr-p5s"/>
                                     <constraint firstAttribute="width" constant="38" id="Xpl-zo-0Wz"/>
                                 </constraints>
                                 <state key="normal" title="W"/>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="ga9-0N-9c6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGP-uS-OAm">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGP-uS-OAm">
                                 <rect key="frame" x="242" y="632" width="38" height="38"/>
-                                <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="5Xs-WY-qZB"/>
                                     <constraint firstAttribute="height" constant="38" id="Pnc-F5-Ik8"/>
@@ -579,18 +631,24 @@
                                 <state key="normal" title="R">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="HEq-jw-XTj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X1-bI-mYd">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X1-bI-mYd">
                                 <rect key="frame" x="296" y="632" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="Ejp-5l-V0s"/>
                                     <constraint firstAttribute="height" constant="38" id="N7h-GJ-Aec"/>
                                 </constraints>
                                 <state key="normal" title="F"/>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="SD9-7f-5Kk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZN-Kh-wJA">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZN-Kh-wJA">
                                 <rect key="frame" x="350" y="632" width="38" height="38"/>
-                                <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="ECG-r2-QVZ"/>
                                     <constraint firstAttribute="height" constant="38" id="ZN1-Fc-gNA"/>
@@ -598,6 +656,9 @@
                                 <state key="normal" title="S">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="7NH-TU-uRb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-wT-aRX">
                                 <rect key="frame" x="27" y="356" width="360" height="21"/>
@@ -607,7 +668,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv5-N5-wty">
                                 <rect key="frame" x="26" y="632" width="38" height="38"/>
-                                <color key="backgroundColor" red="0.76210496770000002" green="0.8624759085" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="ToP-jh-XxE"/>
                                     <constraint firstAttribute="width" constant="38" id="WPS-nA-6dG"/>
@@ -615,6 +676,9 @@
                                 <state key="normal" title="S">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="weekdayButtonPressed:" destination="WFq-S8-DFU" eventType="touchUpInside" id="p8w-AD-UUH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -678,6 +742,13 @@
                         <outlet property="goalName" destination="sC9-hx-b31" id="vaW-Pv-frF"/>
                         <outlet property="goalStartDate" destination="jja-3q-n8e" id="2Hm-16-Byl"/>
                         <outlet property="repetition" destination="BBd-X0-2YZ" id="Yri-Jy-jh1"/>
+                        <outletCollection property="weekdayButtons" destination="qv5-N5-wty" collectionClass="NSMutableArray" id="LKK-bB-uUP"/>
+                        <outletCollection property="weekdayButtons" destination="lPj-QT-QE0" collectionClass="NSMutableArray" id="gyM-sU-hqL"/>
+                        <outletCollection property="weekdayButtons" destination="GUo-xr-7ye" collectionClass="NSMutableArray" id="lzk-im-V6R"/>
+                        <outletCollection property="weekdayButtons" destination="ucz-VP-KrU" collectionClass="NSMutableArray" id="rks-Sr-CdY"/>
+                        <outletCollection property="weekdayButtons" destination="FGP-uS-OAm" collectionClass="NSMutableArray" id="p9M-NU-Bzd"/>
+                        <outletCollection property="weekdayButtons" destination="6X1-bI-mYd" collectionClass="NSMutableArray" id="3bT-JC-r6C"/>
+                        <outletCollection property="weekdayButtons" destination="cZN-Kh-wJA" collectionClass="NSMutableArray" id="nEz-b4-n5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-nw-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -945,6 +1016,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="22F-Q9-L0U"/>
+        <segue reference="KiP-lS-aax"/>
     </inferredMetricsTieBreakers>
 </document>
