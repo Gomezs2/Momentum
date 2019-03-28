@@ -22,11 +22,19 @@ class SingleGoalViewController: UIViewController{
     // Testing function
     func goalsData(goal: Goal) {
         goalDate.text = goal.startDate
+        print(goal.key)
         print(goal.name)
         print(goal.category)
         print(goal.startDate)
         print(goal.endDate)
         print(goal.repeatOption)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditGoal"{
+            let destVC = segue.destination as! EditGoalViewController
+            destVC.goalData = goalData
+        }
     }
     
     

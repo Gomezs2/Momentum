@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditGoalViewController:
     UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -16,38 +17,43 @@ class EditGoalViewController:
     @IBOutlet var categories: UIPickerView!
     @IBOutlet var repetitions: UIPickerView!
     @IBOutlet var weekdayButtons: [UIButton]!
-    
     @IBOutlet var endDate: UIDatePicker!
     @IBOutlet var startDate: UIDatePicker!
+    
+    var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
+    var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
+    
+    var goalData: Goal?
+    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
+    var selectedStartDate = ""
+    var selectedEndDate = ""
+    //TO DO: change these variables to the user's previous choice
+    var selectedCategory = "Default"
+    var selectedRepetition = "Never"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func startDateChanges(_ sender: Any) {
         let startDateFormatter = DateFormatter()
         startDateFormatter.dateStyle = DateFormatter.Style.short
-        let strStartDate = startDateFormatter.string( from: startDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print(strStartDate)
+        selectedStartDate = startDateFormatter.string( from: startDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
+        print(selectedStartDate)
     }
     
     @IBAction func endDateChanges(_ sender: Any) {
         let endDateFormatter = DateFormatter()
         endDateFormatter.dateStyle = DateFormatter.Style.short
-        let strEndDate = endDateFormatter.string( from: endDate.date) ///strEndDate string stores the goal start date in MM/DD/YY
-        print(strEndDate)
+        selectedEndDate = endDateFormatter.string( from: endDate.date) ///strEndDate string stores the goal start date in MM/DD/YY
+        print(selectedEndDate)
     }
-    
-    
-    var daysSelected = "" //String that stores weekdays to repeat goal. Format: S|M|T|W|
-    
-    var categoryOptions = ["General", "Efficency", "Fitness", "Health", "Hobbies", "Social","Skills" ]
-    var repetitionOptions = ["Never", "Daily", "Weekly", "Monthly", "Yearly"]
-    
-    //TO DO: change these variables to the user's previous choice
-    var selectedCategory = "Default"
-    var selectedRepetition = "Never"
     
     //handle categories and repeat picker views
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if (pickerView.tag == 1){
@@ -57,6 +63,7 @@ class EditGoalViewController:
             return repetitionOptions.count
         }
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (pickerView.tag == 1){
@@ -66,6 +73,7 @@ class EditGoalViewController:
             return repetitionOptions[row]
         }
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if (pickerView.tag == 1){
@@ -159,21 +167,73 @@ class EditGoalViewController:
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func updateName() -> String{
+        if goalName.text!.count != 0 && goalName.text! != goalData!.name {
+            return goalName.text!
+        }
+        return goalData!.name
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateCategory() -> String{
+        if selectedCategory != "Default" && selectedCategory != goalData!.category {
+            return selectedCategory
+        }
+        return goalData!.category
     }
-    */
+    
+    func updateStartDate() -> String{
+        if selectedStartDate != "" && selectedStartDate != goalData!.startDate {
+            return selectedStartDate
+        }
+        return goalData!.startDate
+    }
+    
+    func updateEndDate() -> String{
+        if selectedEndDate != "" && selectedEndDate != goalData!.endDate {
+            return selectedEndDate
+        }
+        return goalData!.endDate
+    }
+    
+    func updateRepeatOption() -> String {
+        if selectedRepetition != "Never" && selectedRepetition != goalData!.repeatOption {
+            return selectedRepetition
+        }
+        return goalData!.repeatOption
+    }
+    
+    func updateGoal() {
+        let goalsDB = Database.database().reference().child("Goals")
+        let updatedData = [
+            "name" : updateName(),
+            "category" : updateCategory(),
+            "startDate" : updateStartDate(),
+            "endDate" : updateEndDate(),
+            "goalRepeatOption" : updateRepeatOption(),
+            ]
+        
+        let childUpdates = ["\(goalData!.key)" : updatedData]
+        goalsDB.updateChildValues(childUpdates)
+        popTwo()
+    }
+    
+    func deleteGoal() {
+        let goalToDel = Database.database().reference().child("Goals").child("\(goalData!.key)")
+        goalToDel.removeValue()
+        popTwo()
+    }
+    
+    func popTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+    }
 
+    @IBAction func donePressed(_ sender: Any) {
+        updateGoal()
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        deleteGoal()
+    }
+    
 }

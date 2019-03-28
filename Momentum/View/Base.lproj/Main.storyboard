@@ -307,7 +307,7 @@
                     <navigationItem key="navigationItem" title="Goal Name" leftItemsSupplementBackButton="YES" id="38v-pW-1va">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="CXU-hT-Dkq">
                             <connections>
-                                <segue destination="aj3-Xn-qvl" kind="show" id="rFC-Xf-WbV"/>
+                                <segue destination="aj3-Xn-qvl" kind="show" identifier="goToEditGoal" id="rFC-Xf-WbV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -563,8 +563,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit Goal" id="bKW-fz-MYQ">
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="trash" id="sHD-3t-hHh"/>
-                            <barButtonItem style="plain" systemItem="done" id="0fk-7t-2aB"/>
+                            <barButtonItem style="plain" systemItem="trash" id="sHD-3t-hHh">
+                                <connections>
+                                    <action selector="deletePressed:" destination="aj3-Xn-qvl" id="p6C-qe-XVp"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="done" id="0fk-7t-2aB">
+                                <connections>
+                                    <action selector="donePressed:" destination="aj3-Xn-qvl" id="HjG-am-vRX"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
