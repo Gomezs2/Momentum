@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-P5-b0I">
-                        <rect key="frame" x="16" y="11" width="42" height="22"/>
+                        <rect key="frame" x="16" y="0.0" width="42" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P2S-Gp-Ynu">
-                        <rect key="frame" x="126" y="21" width="150" height="2"/>
+                        <rect key="frame" x="16" y="30" width="288" height="2"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </progressView>
                 </subviews>
@@ -37,7 +37,7 @@
                 <outlet property="progress" destination="P2S-Gp-Ynu" id="9Xk-Rl-FPQ"/>
                 <outlet property="title" destination="8gg-P5-b0I" id="s5z-qs-ekv"/>
             </connections>
-            <point key="canvasLocation" x="-277" y="-38"/>
+            <point key="canvasLocation" x="-278.39999999999998" y="-38.680659670164921"/>
         </tableViewCell>
     </objects>
 </document>
