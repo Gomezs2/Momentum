@@ -29,6 +29,7 @@
 		50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50E782E32240B174003C4541 /* GoogleService-Info.plist */; };
 		98D0664822482B8500E24251 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0664722482B8500E24251 /* EditGoalViewController.swift */; };
 		DAB656A8224954290025B895 /* WelcomeBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB656A7224954290025B895 /* WelcomeBackViewController.swift */; };
+		DACE774E225273D900B744F5 /* CreateMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE774D225273D900B744F5 /* CreateMilestoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Momentum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.release.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.release.xcconfig"; sourceTree = "<group>"; };
 		DAB656A7224954290025B895 /* WelcomeBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackViewController.swift; sourceTree = "<group>"; };
+		DACE774D225273D900B744F5 /* CreateMilestoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMilestoneViewController.swift; sourceTree = "<group>"; };
 		EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				50D487F72239B52500CC1214 /* AppDelegate.swift */,
 				501E54872246B8CF00C18B0F /* GoalsViewController.swift */,
 				50E0804E2246CE5E00FB7DBF /* CreateGoalViewController.swift */,
+				DACE774D225273D900B744F5 /* CreateMilestoneViewController.swift */,
 				50E08052224718D200FB7DBF /* SingleGoalViewController.swift */,
 				98D0664722482B8500E24251 /* EditGoalViewController.swift */,
 				50D487F92239B52500CC1214 /* WelcomeViewController.swift */,
@@ -475,6 +478,7 @@
 				50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */,
 				50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */,
 				50D487F82239B52500CC1214 /* AppDelegate.swift in Sources */,
+				DACE774E225273D900B744F5 /* CreateMilestoneViewController.swift in Sources */,
 				50E08053224718D200FB7DBF /* SingleGoalViewController.swift in Sources */,
 				501E54882246B8CF00C18B0F /* GoalsViewController.swift in Sources */,
 				98D0664822482B8500E24251 /* EditGoalViewController.swift in Sources */,

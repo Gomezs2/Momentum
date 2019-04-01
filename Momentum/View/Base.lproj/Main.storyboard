@@ -541,10 +541,10 @@
             </objects>
             <point key="canvasLocation" x="3830.434782608696" y="600"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Milestone View Controller-->
         <scene sceneID="raz-Ss-Vuj">
             <objects>
-                <viewController id="4Ne-TE-w5o" sceneMemberID="viewController">
+                <viewController id="4Ne-TE-w5o" customClass="CreateMilestoneViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKg-nH-7Ob">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -626,6 +626,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cR6-a2-m33"/>
                     </view>
+                    <connections>
+                        <outlet property="endDatePicker" destination="8Ha-l2-qWQ" id="r3e-FC-R2b"/>
+                        <outlet property="milestoneNameField" destination="YGX-mM-RBs" id="Dj2-m1-8J3"/>
+                        <outlet property="remindTimeField" destination="iIO-g1-7FI" id="mSB-xo-dyO"/>
+                        <outlet property="reminderPicker" destination="rYu-Yl-mGe" id="sd3-ce-z7w"/>
+                        <outlet property="startDatePicker" destination="WXM-QE-fIa" id="uuw-uy-UCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9Q-Y0-5mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
