@@ -239,8 +239,15 @@
                                 <rect key="frame" x="16" y="298" width="51" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="add" id="zQI-Hg-95I"/>
+                                    <barButtonItem systemItem="add" id="zQI-Hg-95I">
+                                        <connections>
+                                            <segue destination="4Ne-TE-w5o" kind="show" id="wBH-zR-Twx"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="zQI-Hg-95I" id="GAI-BN-SIA"/>
+                                </connections>
                             </toolbar>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-30-CyR">
                                 <rect key="frame" x="308" y="298" width="51" height="44"/>
@@ -598,10 +605,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYu-Yl-mGe">
-                                <rect key="frame" x="183" y="578" width="115" height="41"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIO-g1-7FI">
                                 <rect key="frame" x="117" y="583" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -621,7 +624,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                 <state key="normal" title="Add Milestone"/>
+                                <connections>
+                                    <action selector="createButton:" destination="4Ne-TE-w5o" eventType="touchUpInside" id="Srn-7R-qDY"/>
+                                </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYu-Yl-mGe">
+                                <rect key="frame" x="190" y="578" width="96" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cR6-a2-m33"/>
