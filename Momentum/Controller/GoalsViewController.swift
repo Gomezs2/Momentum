@@ -29,7 +29,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func designCell(cell: GoalsTableViewCell) {
-        cell.progress.transform = cell.progress.transform.scaledBy(x:1,y:8)
+        cell.progress.transform = CGAffineTransform(scaleX: 1, y: 8)
     }
     
     // Init cells
