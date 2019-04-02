@@ -28,9 +28,16 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         goalsTableView.separatorStyle = .none
     }
     
+    func designCell(cell: GoalsTableViewCell) {
+        cell.progress.transform = CGAffineTransform(scaleX: 1, y: 8)
+    }
+    
     // Init cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customGoalCell", for: indexPath) as! GoalsTableViewCell
+        
+        designCell(cell:cell)
+        
         cell.title.text = goalArray[indexPath.row].name
         return cell
     }
