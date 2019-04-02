@@ -24,15 +24,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="316" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-P5-b0I">
-                        <rect key="frame" x="7" y="11" width="207" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-P5-b0I">
+                        <rect key="frame" x="16" y="0.0" width="72" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <progressView contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P2S-Gp-Ynu">
-                        <rect key="frame" x="160" y="25" width="150" height="3"/>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P2S-Gp-Ynu">
+                        <rect key="frame" x="16" y="30" width="288" height="2"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.99793266309999995" green="1" blue="0.18841956400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,7 +49,7 @@
                 <outlet property="progress" destination="P2S-Gp-Ynu" id="9Xk-Rl-FPQ"/>
                 <outlet property="title" destination="8gg-P5-b0I" id="s5z-qs-ekv"/>
             </connections>
-            <point key="canvasLocation" x="-262" y="-36.5"/>
+            <point key="canvasLocation" x="-278.39999999999998" y="-38.680659670164921"/>
         </tableViewCell>
     </objects>
 </document>
