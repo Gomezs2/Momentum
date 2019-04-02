@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 
                 //Go to chat view
-                self.performSegue(withIdentifier: "GoToGoals", sender: self)
+                self.performSegue(withIdentifier: "goToGoals", sender: self)
             } else{
                 SVProgressHUD.dismiss()
                 self.createAlert(errorMessage: error!.localizedDescription)

@@ -17,7 +17,7 @@ class WelcomeBackViewController: UIViewController {
         if (welcomeTime <= 0) {
             timer!.invalidate()
             timer = nil
-            self.performSegue(withIdentifier: "GoToGoals", sender: self)
+            self.performSegue(withIdentifier: "goToGoals", sender: self)
         }
     }
     
@@ -30,3 +30,4 @@ class WelcomeBackViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
+

@@ -12,6 +12,8 @@ class SingleGoalViewController: UIViewController{
     // Goal data passed in by segue
     var goalData: Goal?
     
+    @IBOutlet weak var goalDate: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = goalData?.name
@@ -19,6 +21,7 @@ class SingleGoalViewController: UIViewController{
     }
     // Testing function
     func goalsData(goal: Goal) {
+        goalDate.text = goal.startDate
         print(goal.key)
         print(goal.name)
         print(goal.category)
