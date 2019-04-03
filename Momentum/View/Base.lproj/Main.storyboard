@@ -250,7 +250,11 @@
                                     <constraint firstAttribute="width" constant="55" id="Jd2-UQ-Obk"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="add" id="zQI-Hg-95I"/>
+                                    <barButtonItem systemItem="add" id="zQI-Hg-95I">
+                                        <connections>
+                                            <segue destination="Gzf-mf-LMl" kind="show" id="uGd-dB-305"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -312,6 +316,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkB-39-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2968.115942028986" y="600"/>
+        </scene>
+        <!--Create Milestone View Controller-->
+        <scene sceneID="5el-P5-LV7">
+            <objects>
+                <viewController id="Gzf-mf-LMl" customClass="CreateMilestoneViewController" customModule="Momentum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VQh-Ot-by0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Milestone Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7H-w0-zWg">
+                                <rect key="frame" x="16" y="109" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Milestone Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-nG-b3t">
+                                <rect key="frame" x="16" y="138" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oN-EO-kGq">
+                                <rect key="frame" x="16" y="191" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PtZ-7c-7IU">
+                                <rect key="frame" x="0.0" y="220" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="575945037.34383798">
+                                    <!--2019-04-03 00:43:57 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-Jf-PQa">
+                                <rect key="frame" x="0.0" y="419" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="575945045.82876301">
+                                    <!--2019-04-03 00:44:05 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mck-bi-tVP">
+                                <rect key="frame" x="16" y="390" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFY-bH-q92">
+                                <rect key="frame" x="16" y="603" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="864-wK-tZm">
+                                <rect key="frame" x="110" y="598" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-MF-GdA">
+                                <rect key="frame" x="177" y="596" width="112" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-EO-Maq">
+                                <rect key="frame" x="104" y="648" width="172" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                <state key="normal" title="Create Milestone"/>
+                                <connections>
+                                    <action selector="createButton:" destination="Gzf-mf-LMl" eventType="touchUpInside" id="NGb-9U-pjC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-hz-Y9J">
+                                <rect key="frame" x="308" y="603" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Svg-fd-ghA"/>
+                    </view>
+                    <connections>
+                        <outlet property="endDatePicker" destination="tFs-Jf-PQa" id="hMJ-od-xHO"/>
+                        <outlet property="milestoneNameField" destination="YTP-nG-b3t" id="DcH-k6-OY6"/>
+                        <outlet property="remindTimeField" destination="864-wK-tZm" id="k3A-pY-skm"/>
+                        <outlet property="reminderPicker" destination="fNl-MF-GdA" id="Kof-vh-rli"/>
+                        <outlet property="startDatePicker" destination="PtZ-7c-7IU" id="YEZ-8P-zh7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LU-HH-bPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3308" y="1331.5270935960591"/>
         </scene>
         <!--Edit Goal-->
         <scene sceneID="dGm-dq-C2V">
@@ -620,7 +724,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jja-3q-n8e">
-                                <rect key="frame" x="27" y="266" width="818.33333333333337" height="241"/>
+                                <rect key="frame" x="27" y="266" width="321" height="94.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jja-3q-n8e" secondAttribute="height" multiplier="180:53" id="a9D-Ku-2v4"/>
                                 </constraints>
@@ -632,7 +736,7 @@
                                 </connections>
                             </datePicker>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-LG-uXQ">
-                                <rect key="frame" x="199.33333333333331" y="145" width="195" height="100"/>
+                                <rect key="frame" x="199.33333333333337" y="145" width="195" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EpH-Qb-JdZ"/>
                                     <constraint firstAttribute="width" constant="195" id="Vod-Tz-QOM"/>
@@ -643,13 +747,13 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzD-YP-uOi">
-                                <rect key="frame" x="34" y="237" width="818.33333333333337" height="21"/>
+                                <rect key="frame" x="34" y="237" width="321" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LPu-vp-qf9">
-                                <rect key="frame" x="27" y="544" width="818.33333333333337" height="216"/>
+                                <rect key="frame" x="27" y="397.66666666666669" width="321" height="84.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LPu-vp-qf9" secondAttribute="height" multiplier="72:19" id="dZQ-vB-6uv"/>
                                 </constraints>
@@ -661,7 +765,7 @@
                                 </connections>
                             </datePicker>
                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBd-X0-2YZ">
-                                <rect key="frame" x="27" y="797" width="818.33333333333337" height="92"/>
+                                <rect key="frame" x="27" y="519.33333333333337" width="321" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="Cel-rm-XbN"/>
                                     <constraint firstAttribute="height" constant="92" id="x0j-ab-gFH"/>
@@ -672,13 +776,13 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P73-y3-lgr">
-                                <rect key="frame" x="27" y="768" width="818.33333333333337" height="21"/>
+                                <rect key="frame" x="27" y="490.33333333333331" width="321" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPj-QT-QE0">
-                                <rect key="frame" x="309.33333333333331" y="912" width="38" height="38"/>
+                                <rect key="frame" x="60.666666666666657" y="634.33333333333337" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="9c4-mN-8Cg"/>
                                     <constraint firstAttribute="width" constant="38" id="Cpm-QH-i5K"/>
@@ -689,7 +793,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUo-xr-7ye">
-                                <rect key="frame" x="363.33333333333331" y="912" width="38" height="38"/>
+                                <rect key="frame" x="114.66666666666669" y="634.33333333333337" width="38" height="38"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="9UF-6O-DVL"/>
@@ -703,7 +807,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-VP-KrU">
-                                <rect key="frame" x="417.33333333333331" y="912" width="38" height="38"/>
+                                <rect key="frame" x="168.66666666666666" y="634.33333333333337" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="58C-nr-p5s"/>
                                     <constraint firstAttribute="width" constant="38" id="Xpl-zo-0Wz"/>
@@ -714,7 +818,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGP-uS-OAm">
-                                <rect key="frame" x="471.33333333333331" y="912" width="38" height="38"/>
+                                <rect key="frame" x="222.66666666666666" y="634.33333333333337" width="37.999999999999972" height="38"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="5Xs-WY-qZB"/>
@@ -728,7 +832,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X1-bI-mYd">
-                                <rect key="frame" x="525.33333333333337" y="912" width="38" height="38"/>
+                                <rect key="frame" x="276.66666666666669" y="634.33333333333337" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="Ejp-5l-V0s"/>
                                     <constraint firstAttribute="height" constant="38" id="N7h-GJ-Aec"/>
@@ -739,7 +843,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZN-Kh-wJA">
-                                <rect key="frame" x="579.33333333333337" y="912" width="38" height="38"/>
+                                <rect key="frame" x="330.66666666666669" y="634.33333333333337" width="38" height="38"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="ECG-r2-QVZ"/>
@@ -753,13 +857,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-wT-aRX">
-                                <rect key="frame" x="27" y="515" width="818.33333333333337" height="21"/>
+                                <rect key="frame" x="27" y="368.66666666666669" width="321" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv5-N5-wty">
-                                <rect key="frame" x="255.33333333333331" y="912" width="38" height="38"/>
+                                <rect key="frame" x="6.6666666666666679" y="634.33333333333337" width="38" height="38"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="ToP-jh-XxE"/>
