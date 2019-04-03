@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		03C34498AC38EE4637982F65 /* libPods-MomentumUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB5116D71C0345F4347224A /* libPods-MomentumUITests.a */; };
+		0AF20374225427F700E5ED29 /* MilestonesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF20372225427F700E5ED29 /* MilestonesTableViewCell.swift */; };
+		0AF20375225427F700E5ED29 /* MilestoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF20373225427F700E5ED29 /* MilestoneCell.xib */; };
 		1C649BCCE0CE26C8247A1EE9 /* Pods_Momentum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */; };
 		2FC7D8CE680DF0FBF9B37A1F /* libPods-MomentumTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C48020DA7878EC6A10FDDEC /* libPods-MomentumTests.a */; };
 		501E54882246B8CF00C18B0F /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501E54872246B8CF00C18B0F /* GoalsViewController.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AF20372225427F700E5ED29 /* MilestonesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesTableViewCell.swift; sourceTree = "<group>"; };
+		0AF20373225427F700E5ED29 /* MilestoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MilestoneCell.xib; sourceTree = "<group>"; };
 		0C92F7F76FB5C2E9A7030D62 /* Pods-MomentumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.release.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3BA12013CA1953B99CDD090C /* Pods-Momentum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.debug.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.debug.xcconfig"; sourceTree = "<group>"; };
 		501E54872246B8CF00C18B0F /* GoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 			children = (
 				50E0804A2246C61D00FB7DBF /* GoalsTableViewCell.swift */,
 				50E0804B2246C61D00FB7DBF /* GoalCell.xib */,
+				0AF20372225427F700E5ED29 /* MilestonesTableViewCell.swift */,
+				0AF20373225427F700E5ED29 /* MilestoneCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				50D487FF2239B52600CC1214 /* Assets.xcassets in Resources */,
 				50E782E42240B174003C4541 /* GoogleService-Info.plist in Resources */,
 				5062F553223DFA0000946292 /* README.md in Resources */,
+				0AF20375225427F700E5ED29 /* MilestoneCell.xib in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +480,7 @@
 				50E0804F2246CE5E00FB7DBF /* CreateGoalViewController.swift in Sources */,
 				50E782E22240A999003C4541 /* LoginViewController.swift in Sources */,
 				50E782E02240A8E4003C4541 /* SignUpViewController.swift in Sources */,
+				0AF20374225427F700E5ED29 /* MilestonesTableViewCell.swift in Sources */,
 				50D487FA2239B52500CC1214 /* WelcomeViewController.swift in Sources */,
 				50D487F82239B52500CC1214 /* AppDelegate.swift in Sources */,
 				50E08053224718D200FB7DBF /* SingleGoalViewController.swift in Sources */,
