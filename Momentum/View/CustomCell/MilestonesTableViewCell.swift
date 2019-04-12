@@ -11,7 +11,9 @@ import UIKit
 class MilestonesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
+
     
+    @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var endDate: UILabel!
     
     
