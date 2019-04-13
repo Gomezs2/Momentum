@@ -32,6 +32,8 @@
 		980D0AFB2255750900C4B334 /* EditMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980D0AFA2255750900C4B334 /* EditMilestoneViewController.swift */; };
 		98D0664822482B8500E24251 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0664722482B8500E24251 /* EditGoalViewController.swift */; };
 		DAF3AC6D2254388700FFC30D /* CreateMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3AC6C2254388700FFC30D /* CreateMilestoneViewController.swift */; };
+		DB1BE0F62262502D00C2DB77 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB1BE0F52262502D00C2DB77 /* Profile.png */; };
+		DB1BE0FA226259CD00C2DB77 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = DB1BE0F9226259CC00C2DB77 /* Controller */; };
 		DB29D79222497D46007E0570 /* WelcomeBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB29D79122497D46007E0570 /* WelcomeBackViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		BCF27A41F4DEA7B7A37A11AC /* Pods_Momentum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Momentum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.release.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.release.xcconfig"; sourceTree = "<group>"; };
 		DAF3AC6C2254388700FFC30D /* CreateMilestoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMilestoneViewController.swift; sourceTree = "<group>"; };
+		DB1BE0F52262502D00C2DB77 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
+		DB1BE0F9226259CC00C2DB77 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
 		DB29D79122497D46007E0570 /* WelcomeBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackViewController.swift; sourceTree = "<group>"; };
 		EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +180,7 @@
 				50D487F92239B52500CC1214 /* WelcomeViewController.swift */,
 				50E782DF2240A8E4003C4541 /* SignUpViewController.swift */,
 				50E782E12240A999003C4541 /* LoginViewController.swift */,
+				DB1BE0F9226259CC00C2DB77 /* Controller */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 		5062F54F223DF8DF00946292 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB1BE0F52262502D00C2DB77 /* Profile.png */,
 				50D488032239B52600CC1214 /* Info.plist */,
 				50E782E32240B174003C4541 /* GoogleService-Info.plist */,
 			);
@@ -371,6 +377,8 @@
 				5062F553223DFA0000946292 /* README.md in Resources */,
 				0AF20375225427F700E5ED29 /* MilestoneCell.xib in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
+				DB1BE0F62262502D00C2DB77 /* Profile.png in Resources */,
+				DB1BE0FA226259CD00C2DB77 /* Controller in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
