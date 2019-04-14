@@ -17,22 +17,125 @@ class CreateMilestoneViewController: UIViewController {
     @IBOutlet weak var remindTimeField: UITextField!
     @IBOutlet weak var reminderPicker: UIPickerView!
     private let reminderOptions:[String] = ["Minutes", "Hours", "Days"]
-    var reminderOption:String?
+    
+    // Goal data passed in by segue
+    var goalData: Goal?
+    var selectedStartDate = ""
+    var selectedEndDate = ""
+    var reminderOption : String = "Minutes"
+    var firstMilestone = false
+    var goalMilestones : [String : Any] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // connect reminderOptions to UIPicker
         reminderPicker.dataSource = self
         reminderPicker.delegate = self
-    }
-    
-    @IBAction func createButton(_ sender: Any) {
-        // current reminder option selected by user is stored in reminderOptions automatically
+        selectedStartDate = formatInitDate(date: startDatePicker.date)
+        selectedEndDate = formatInitDate(date: startDatePicker.date)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func formatInitDate(date : Date) -> String {
+        let startDateFormatter = DateFormatter()
+        startDateFormatter.dateStyle = DateFormatter.Style.short
+        return startDateFormatter.string( from: date)
+    }
+    
+    @IBAction func StartDatePickerChanged(_ sender: Any) {
+        let startDateFormatter = DateFormatter()
+        startDateFormatter.dateStyle = DateFormatter.Style.short
+        selectedStartDate = startDateFormatter.string( from: startDatePicker.date)
+    }
+    
+    @IBAction func EndDatePickerChanged(_ sender: Any) {
+        let endDateFormatter = DateFormatter()
+        endDateFormatter.dateStyle = DateFormatter.Style.short
+        selectedEndDate = endDateFormatter.string( from: endDatePicker.date)
+    }
+    
+    func userInteractionEnabled(value : Bool){
+        milestoneNameField.isEnabled = value
+        startDatePicker.isEnabled = value
+        endDatePicker.isEnabled = value
+        remindTimeField.isEnabled = value
+    }
+    
+    func updateGoalsMilestone(milestoneKey: String){
+        let goalID = goalData?.key
+        let goalDB = Database.database().reference().child("Goals").child(goalID!)
+        
+        if self.firstMilestone {
+            self.goalMilestones = [
+                milestoneKey : true
+            ]
+        }
+        else {
+            self.goalMilestones[milestoneKey] = true
+        }
+        
+        goalDB.child("milestones").setValue(self.goalMilestones)
+        self.userInteractionEnabled(value: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func addMilestone(goalID: String, milestoneID: String){
+        let key = goalID + ":" + milestoneID
+        let milestoneDB = Database.database().reference().child("Milestones")
+        
+        let milestoneData = [
+            "name" : milestoneNameField.text!,
+            "startDate" : selectedStartDate,
+            "endDate" : selectedEndDate,
+            "reminderValue" : remindTimeField.text!,
+            "reminderLength" : reminderOption
+        ]
+        
+        milestoneDB.child(key).setValue(milestoneData) {
+            (error, reference) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                self.updateGoalsMilestone(milestoneKey: reference.key!)
+            }
+        }
+    }
+    
+    func createMilestoneID(){
+        let goalID = goalData?.key
+        let goalsDB =
+            Database.database().reference().child("Goals").child(goalID!)
+        
+        goalsDB.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get users Data
+            let snapshotValue = snapshot.value as! NSDictionary
+            
+            // Check if this is first milestone
+            var milestoneID = -1
+            if snapshotValue["milestones"] is Bool{
+                self.firstMilestone = true
+                milestoneID = 1
+                self.addMilestone(goalID: goalID!, milestoneID: String(milestoneID))
+            }
+            else{
+                self.goalMilestones = (snapshotValue["milestones"] as! NSDictionary) as! [String : Any]
+                milestoneID = (snapshotValue["milestones"] as! NSDictionary).count + 1
+                self.addMilestone(goalID: goalID!, milestoneID: String(milestoneID))
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    @IBAction func createButton(_ sender: Any) {
+        userInteractionEnabled(value: false)
+        createMilestoneID()
+    }
+    
 }
 
 // pickerView for milestone reminder
