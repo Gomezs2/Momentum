@@ -125,6 +125,10 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
             let destVC = segue.destination as! SingleGoalViewController
             destVC.goalData = goalArray[rowChoosen]
         }
+        else if segue.identifier == "goToProfile"{
+            let destVC = segue.destination as! ProfileViewController
+            destVC.goalArray = goalArray
+        }
     }
     
 }

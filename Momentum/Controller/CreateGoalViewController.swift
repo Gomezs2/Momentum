@@ -84,11 +84,9 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         if (pickerView.tag == 1){
             selectedCategory = categoryOptions[row]
-            print(selectedCategory)
         }
         else{
             selectedRepetition = repetitionOptions[row]
-            print(selectedRepetition)
             if selectedRepetition == "Weekly"{
                 for button in weekdayButtons{
                     button.isEnabled = true
@@ -151,7 +149,6 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 }
             }
         }
-        print(daysSelected)
     }
     
     //Deletes days from the selected weekday string
