@@ -34,6 +34,7 @@
 		98D0664822482B8500E24251 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0664722482B8500E24251 /* EditGoalViewController.swift */; };
 		DAF3AC6D2254388700FFC30D /* CreateMilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3AC6C2254388700FFC30D /* CreateMilestoneViewController.swift */; };
 		DB29D79222497D46007E0570 /* WelcomeBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB29D79122497D46007E0570 /* WelcomeBackViewController.swift */; };
+		DBF8B42422641A1C00282A58 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DBF8B42322641A1B00282A58 /* Profile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D8C6D190AD1A2120183BB736 /* Pods-Momentum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Momentum.release.xcconfig"; path = "Target Support Files/Pods-Momentum/Pods-Momentum.release.xcconfig"; sourceTree = "<group>"; };
 		DAF3AC6C2254388700FFC30D /* CreateMilestoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMilestoneViewController.swift; sourceTree = "<group>"; };
 		DB29D79122497D46007E0570 /* WelcomeBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackViewController.swift; sourceTree = "<group>"; };
+		DBF8B42322641A1B00282A58 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
 		EA52AAA6316A9678417269E7 /* Pods-MomentumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentumUITests.debug.xcconfig"; path = "Target Support Files/Pods-MomentumUITests/Pods-MomentumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 			children = (
 				50D488032239B52600CC1214 /* Info.plist */,
 				50E782E32240B174003C4541 /* GoogleService-Info.plist */,
+				DBF8B42322641A1B00282A58 /* Profile.png */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				5062F553223DFA0000946292 /* README.md in Resources */,
 				0AF20375225427F700E5ED29 /* MilestoneCell.xib in Resources */,
 				50D487FD2239B52500CC1214 /* Main.storyboard in Resources */,
+				DBF8B42422641A1C00282A58 /* Profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
