@@ -12,39 +12,94 @@ import Firebase
 class EditMilestoneViewController: UIViewController {
 
     @IBOutlet weak var milestoneName: UITextField!
-    
     @IBOutlet weak var startDatePicker: UIDatePicker!
-    
     @IBOutlet weak var endDatePicker: UIDatePicker!
-
     @IBOutlet weak var reminderTime: UITextField!
-    
     @IBOutlet weak var reminderPicker: UIPickerView!
     
     private let reminderOptions:[String] = ["Minutes", "Hours", "Days"]
-    var reminderOption:String?
+    var reminderOption = ""
     var selectedStartDate = ""
     var selectedEndDate = ""
-    
-    @IBAction func startDateChanges(_ sender: UIDatePicker) {
-        let startDateFormatter = DateFormatter()
-        startDateFormatter.dateStyle = DateFormatter.Style.short
-        selectedStartDate = startDateFormatter.string( from: startDatePicker.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print("start date ", selectedStartDate)
-    }
-    
-    @IBAction func endDateChanges(_ sender: UIDatePicker) {
-        let endDateFormatter = DateFormatter()
-        endDateFormatter.dateStyle = DateFormatter.Style.short
-        selectedEndDate = endDateFormatter.string( from: endDatePicker.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print("end date ", selectedEndDate)
-    }
-    
+    var milestoneData: Milestone?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // connect reminderOptions to UIPicker
         reminderPicker.dataSource = self
         reminderPicker.delegate = self
+    }
+    
+    @IBAction func startDateChanges(_ sender: UIDatePicker) {
+        let startDateFormatter = DateFormatter()
+        startDateFormatter.dateStyle = DateFormatter.Style.short
+        selectedStartDate = startDateFormatter.string( from: startDatePicker.date)
+    }
+    
+    @IBAction func endDateChanges(_ sender: UIDatePicker) {
+        let endDateFormatter = DateFormatter()
+        endDateFormatter.dateStyle = DateFormatter.Style.short
+        selectedEndDate = endDateFormatter.string( from: endDatePicker.date)
+    }
+    
+    func updateName() -> String{
+        if milestoneName.text!.count != 0 && milestoneName.text! != milestoneData!.name {
+            return milestoneName.text!
+        }
+        return milestoneData!.name
+    }
+    
+    func updateStartDate() -> String{
+        if selectedStartDate != "" && selectedStartDate != milestoneData!.startDate {
+            return selectedStartDate
+        }
+        return milestoneData!.startDate
+    }
+    
+    func updateEndDate() -> String{
+        if selectedEndDate != "" && selectedEndDate != milestoneData!.endDate {
+            return selectedEndDate
+        }
+        return milestoneData!.endDate
+    }
+    
+    func updateReminderValue() -> String{
+        if reminderTime.text!.count != 0 && reminderTime.text! != milestoneData!.endDate {
+            return reminderTime.text!
+        }
+        return milestoneData!.reminderValue
+    }
+    
+    func updateReminderLength() -> String{
+        if reminderOption != "" && reminderOption != milestoneData!.endDate {
+            return reminderOption
+        }
+        return milestoneData!.reminderLength
+    }
+    
+    func updateMilestone() {
+        let milestoneDB = Database.database().reference().child("Milestones")
+        let updatedData = [
+            "name" : updateName(),
+            "startDate" : updateStartDate(),
+            "endDate" : updateEndDate(),
+            "reminderValue" : updateReminderValue(),
+            "reminderLength" : updateReminderLength()
+        ]
+        
+        let childUpdates = ["\(milestoneData!.key)" : updatedData]
+        milestoneDB.updateChildValues(childUpdates)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func deleteMilestone() {
+        let milestoneToDel = Database.database().reference().child("Milestones").child("\(milestoneData!.key)")
+        milestoneToDel.removeValue()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        updateMilestone()
     }
 }
 
@@ -65,7 +120,5 @@ extension EditMilestoneViewController: UIPickerViewDelegate, UIPickerViewDataSou
     // The data to return  the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return reminderOptions[row]
-        
     }
-    
 }

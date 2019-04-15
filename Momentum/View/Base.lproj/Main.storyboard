@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK4-BD-92C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2238" y="-357"/>
+            <point key="canvasLocation" x="2804" y="-313"/>
         </scene>
         <!--SingleGoal-->
         <scene sceneID="xRk-0y-0D1">
@@ -236,6 +236,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.01344983187" green="0.81944334510000005" blue="0.65894800419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="xJL-ve-btw" kind="show" identifier="goToEditMilestone" id="7Zm-gj-dDJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -252,7 +255,7 @@
                                 <items>
                                     <barButtonItem systemItem="add" id="zQI-Hg-95I">
                                         <connections>
-                                            <segue destination="Gzf-mf-LMl" kind="show" id="uGd-dB-305"/>
+                                            <segue destination="Gzf-mf-LMl" kind="show" identifier="goToCreateMilestone" id="uGd-dB-305"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -315,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkB-39-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.115942028986" y="600"/>
+            <point key="canvasLocation" x="2804" y="428"/>
         </scene>
         <!--Create Milestone View Controller-->
         <scene sceneID="5el-P5-LV7">
@@ -352,6 +355,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="575945037.34383798">
                                     <!--2019-04-03 00:43:57 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="StartDatePickerChanged:" destination="Gzf-mf-LMl" eventType="valueChanged" id="MBt-dI-mhq"/>
+                                </connections>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tFs-Jf-PQa">
                                 <rect key="frame" x="0.0" y="419" width="375" height="162"/>
@@ -359,6 +365,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="575945045.82876301">
                                     <!--2019-04-03 00:44:05 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="EndDatePickerChanged:" destination="Gzf-mf-LMl" eventType="valueChanged" id="xZD-x5-Efw"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mck-bi-tVP">
                                 <rect key="frame" x="16" y="390" width="70" height="21"/>
@@ -415,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LU-HH-bPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="1357"/>
+            <point key="canvasLocation" x="2767" y="1179"/>
         </scene>
         <!--Edit Milestone-->
         <scene sceneID="EuI-cA-A5Q">
@@ -426,25 +435,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milestone Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usL-D4-HN5">
-                                <rect key="frame" x="16" y="61" width="124" height="21"/>
+                                <rect key="frame" x="16" y="105" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter milestone name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVS-Ac-1B4">
-                                <rect key="frame" x="16" y="90" width="160.66666666666666" height="30"/>
+                                <rect key="frame" x="16" y="134" width="160.66666666666666" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-4w-vbh">
-                                <rect key="frame" x="16" y="128" width="78" height="21"/>
+                                <rect key="frame" x="16" y="172" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-3N-Dza">
-                                <rect key="frame" x="0.0" y="157" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="201" width="375" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="hUb-ny-vBh"/>
                                     <constraint firstAttribute="height" constant="216" id="p8f-ej-9Ze"/>
@@ -457,13 +466,13 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-H0-hK6">
-                                <rect key="frame" x="16" y="381" width="70" height="21"/>
+                                <rect key="frame" x="16" y="425" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hdk-DI-gjs">
-                                <rect key="frame" x="0.0" y="410" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="454" width="375" height="178"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="PRn-as-Q6h"/>
                                     <constraint firstAttribute="height" constant="178" id="iCH-dX-uW3"/>
@@ -476,13 +485,13 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoA-gT-tZj">
-                                <rect key="frame" x="16" y="610" width="91" height="21"/>
+                                <rect key="frame" x="16" y="654" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASt-hz-6Cp">
-                                <rect key="frame" x="115" y="605" width="56" height="30"/>
+                                <rect key="frame" x="115" y="649" width="56" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="Ywh-xM-Woc"/>
                                     <constraint firstAttribute="height" constant="30" id="g7I-US-w3B"/>
@@ -492,13 +501,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwE-QY-ADI">
-                                <rect key="frame" x="309" y="609" width="50" height="21"/>
+                                <rect key="frame" x="309" y="653" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-gA-otT">
-                                <rect key="frame" x="179" y="601" width="113" height="39"/>
+                                <rect key="frame" x="179" y="645" width="113" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="8ld-Dd-LDd"/>
                                     <constraint firstAttribute="height" constant="39" id="mwi-89-IaA"/>
@@ -531,7 +540,11 @@
                         <viewLayoutGuide key="safeArea" id="Edv-uq-Yy4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Milestone" id="N9L-EL-rZv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8ck-JS-bW0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8ck-JS-bW0">
+                            <connections>
+                                <action selector="donePressed:" destination="xJL-ve-btw" id="ef0-IO-A9G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="endDatePicker" destination="Hdk-DI-gjs" id="eXe-gx-Nxk"/>
@@ -543,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpj-43-mFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568.8000000000002" y="1356.6502463054187"/>
+            <point key="canvasLocation" x="3687" y="1179"/>
         </scene>
         <!--Edit Goal-->
         <scene sceneID="dGm-dq-C2V">
@@ -817,7 +830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUR-Nv-cOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830.434782608696" y="600"/>
+            <point key="canvasLocation" x="3665" y="428"/>
         </scene>
         <!--Create Goal-->
         <scene sceneID="ld8-8T-jgw">
@@ -1077,7 +1090,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-nw-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2995.6521739130435" y="-121.46739130434784"/>
+            <point key="canvasLocation" x="3665" y="-313"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1334,7 +1347,7 @@
                         <outlet property="lastNameTextField" destination="cYn-fB-b2R" id="eQp-hK-LGM"/>
                         <outlet property="passwordTextField" destination="9Vh-0L-ZoS" id="sHU-N6-R6F"/>
                         <outlet property="rePasswordTextField" destination="Q2G-EC-Mrl" id="MjO-0h-V5I"/>
-                        <segue destination="NW3-6A-Sa5" kind="show" identifier="toGoal" id="22F-Q9-L0U"/>
+                        <segue destination="NW3-6A-Sa5" kind="show" identifier="goToGoals" id="22F-Q9-L0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njx-85-et7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1391,6 +1404,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hYB-e8-w4y"/>
+        <segue reference="22F-Q9-L0U"/>
     </inferredMetricsTieBreakers>
 </document>

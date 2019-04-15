@@ -30,23 +30,28 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var selectedStartDate = ""
     var selectedEndDate = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedStartDate = formatInitDate(date: goalStartDate.date)
+        selectedEndDate = formatInitDate(date: goalStartDate.date)
+    }
+    
+    func formatInitDate(date : Date) -> String {
+        let startDateFormatter = DateFormatter()
+        startDateFormatter.dateStyle = DateFormatter.Style.short
+        return startDateFormatter.string( from: date)
     }
     
     @IBAction func startDateChanged(_ sender: Any) {
         let startDateFormatter = DateFormatter()
         startDateFormatter.dateStyle = DateFormatter.Style.short
         selectedStartDate = startDateFormatter.string( from: goalStartDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print(selectedStartDate)
     }
     
     @IBAction func endDateChanged(_ sender: Any) {
         let endDateFormatter = DateFormatter()
         endDateFormatter.dateStyle = DateFormatter.Style.short
         selectedEndDate = endDateFormatter.string( from: goalEndDate.date) ///strStartDate string stores the goal start date in MM/DD/YY
-        print(selectedEndDate)
     }
     
     
@@ -63,7 +68,6 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         else{
             return repetitionOptions.count
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -104,9 +108,6 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func weekdayButtonPressed(_ sender: UIButton) {
-        //TO DO: add if statement to only enable if repetition = weekly
-        //adding days to daysSelected string
-        //changing button colors based on state
         for button in weekdayButtons{
             if sender == button && button.backgroundColor !=  UIColor.gray{
                 button.backgroundColor = UIColor.gray
@@ -123,11 +124,11 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 }else if sender.tag == 5{
                     daysSelected += "F|"
                 }else if sender.tag == 6{
-                    daysSelected += "X|" //using X for sunday to differentiate from S
+                    //using X for sunday to differentiate from S
+                    daysSelected += "X|"
                 }
                 
             } else if sender == button && button.backgroundColor ==  UIColor.gray{
-                //TO DO add method to delete weekday from string
                 if sender.tag == 0 || sender.tag == 2 || sender.tag == 4 || sender.tag == 6{
                     button.backgroundColor = UIColor.blue
                 }else{
@@ -146,14 +147,14 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 }else if sender.tag == 5{
                     deleteDays(day : "F|")
                 }else if sender.tag == 6{
-                    deleteDays(day : "X|")//using X for sunday to differentiate from S
+                    deleteDays(day : "X|")
                 }
             }
         }
         print(daysSelected)
     }
     
-    //deletes days from the selected weekday string
+    //Deletes days from the selected weekday string
     func deleteDays(day : String){
         var present = false
         for i in daysSelected{
@@ -199,14 +200,14 @@ class CreateGoalViewController: UIViewController, UIPickerViewDelegate, UIPicker
         let key = userID + ":" + goalID
         let goalsDB = Database.database().reference().child("Goals")
         
-        // Once UIPicker's are init - update this code
-        let goalData = [
+        let goalData : [String : Any] = [
             "name" : goalName.text!,
             "category" : selectedCategory,
             "startDate" : selectedStartDate,
             "endDate" : selectedEndDate,
             "goalRepeatOption" : selectedRepetition,
-        ]
+            "milestones" : false
+            ]
         
         goalsDB.child(key).setValue(goalData) {
             (error, reference) in
