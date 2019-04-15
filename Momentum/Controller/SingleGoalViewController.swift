@@ -10,6 +10,7 @@ import UIKit
 
 class SingleGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var milestonesTableView: UITableView!
     // Goal data passed in by segue
     var goalData: Goal?
@@ -22,6 +23,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         
         self.title = goalData?.name
         goalsData(goal: goalData!)
+        
+        self.progress.transform = CGAffineTransform(scaleX: 1, y: 8)
         
         // Table View
         milestonesTableView.delegate = self
