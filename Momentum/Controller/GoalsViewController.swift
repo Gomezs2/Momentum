@@ -64,14 +64,14 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 return
             }
             
-            let snapshotValue = snapshot.value as! Dictionary<String,String>
-            let goalName = snapshotValue["name"]!
-            let goalCategory = snapshotValue["category"]!
-            let goalStartDate = snapshotValue["startDate"]!
-            let goalEndDate = snapshotValue["endDate"]!
-            let goalRepeatOption = snapshotValue["goalRepeatOption"]!
+            let snapshotValue = snapshot.value as! Dictionary<String,Any>
+            let goalName = snapshotValue["name"]! as! String
+            let goalCategory = snapshotValue["category"]! as! String
+            let goalStartDate = snapshotValue["startDate"]! as! String
+            let goalEndDate = snapshotValue["endDate"]! as! String
+            let goalRepeatOption = snapshotValue["goalRepeatOption"]! as! String
             
-            let goal = Goal(goalKey: snapshot.key, name: goalName, category: goalCategory, startDate: goalStartDate, endDate: goalEndDate, repeatOption: goalRepeatOption)
+            let goal = Goal(goalKey: snapshot.key, name: goalName , category: goalCategory, startDate: goalStartDate, endDate: goalEndDate, repeatOption: goalRepeatOption)
 
             self.goalArray.append(goal)
             self.goalsTableView.reloadData()
@@ -104,14 +104,14 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 return
             }
             
-            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            let snapshotValue = snapshot.value as! Dictionary<String, Any>
             for goal in self.goalArray {
                 if goal.key == snapshot.key {
-                    goal.name = snapshotValue["name"]!
-                    goal.category = snapshotValue["category"]!
-                    goal.startDate = snapshotValue["startDate"]!
-                    goal.endDate = snapshotValue["endDate"]!
-                    goal.repeatOption = snapshotValue["goalRepeatOption"]!
+                    goal.name = snapshotValue["name"]! as! String
+                    goal.category = snapshotValue["category"]! as! String
+                    goal.startDate = snapshotValue["startDate"]! as! String
+                    goal.endDate = snapshotValue["endDate"]! as! String
+                    goal.repeatOption = snapshotValue["goalRepeatOption"]! as! String
                     break
                 }
             }
@@ -124,6 +124,10 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if segue.identifier == "goToSingleGoal"{
             let destVC = segue.destination as! SingleGoalViewController
             destVC.goalData = goalArray[rowChoosen]
+        }
+        else if segue.identifier == "goToProfile"{
+            let destVC = segue.destination as! ProfileViewController
+            destVC.goalArray = goalArray
         }
     }
     
