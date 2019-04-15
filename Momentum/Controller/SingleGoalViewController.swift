@@ -53,10 +53,10 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         //message will run whenever a new message is added to the messages database
         milestoneDB.observe(.childAdded) { (snapshot) in
             //Check if this is current User's data
-            let keyArray = snapshot.key.split(separator: ":")
-            let userID = String(keyArray.first!)
-            
-            if userID != Auth.auth().currentUser?.uid {
+            let keyArray = snapshot.key.components(separatedBy: ":")
+            let goalID = keyArray[0] + ":" + keyArray[1]
+        
+            if goalID != self.goalData?.key {
                 return
             }
             
@@ -75,10 +75,10 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         
         milestoneDB.observe(.childRemoved) { (snapshot) in
             //Check if this is current User's goal
-            let keyArray = snapshot.key.split(separator: ":")
-            let userID = String(keyArray.first!)
-            
-            if userID != Auth.auth().currentUser?.uid {
+            let keyArray = snapshot.key.components(separatedBy: ":")
+            let goalID = keyArray[0] + ":" + keyArray[1]
+
+            if goalID != self.goalData?.key {
                 return
             }
             
@@ -93,10 +93,10 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         
         milestoneDB.observe(.childChanged) { (snapshot) in
             //Check if this is current User's goal
-            let keyArray = snapshot.key.split(separator: ":")
-            let userID = String(keyArray.first!)
-            
-            if userID != Auth.auth().currentUser?.uid {
+            let keyArray = snapshot.key.components(separatedBy: ":")
+            let goalID = keyArray[0] + ":" + keyArray[1]
+
+            if goalID != self.goalData?.key {
                 return
             }
             
