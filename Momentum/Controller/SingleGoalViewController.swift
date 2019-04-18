@@ -36,6 +36,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMilestoneCell", for: indexPath) as! MilestonesTableViewCell
         cell.title.text = milestoneArray[indexPath.row].name
         cell.endDate.text =  milestoneArray[indexPath.row].endDate
+        cell.startDate.text = milestoneArray[indexPath.row].startDate
+        
         return cell
     }
     
