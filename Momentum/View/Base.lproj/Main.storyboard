@@ -446,7 +446,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter milestone name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVS-Ac-1B4">
-                                <rect key="frame" x="16" y="134" width="160.66666666666666" height="30"/>
+                                <rect key="frame" x="16" y="134" width="161" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -518,6 +518,16 @@
                                     <constraint firstAttribute="height" constant="39" id="mwi-89-IaA"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afS-XO-5uT">
+                                <rect key="frame" x="143" y="692" width="80" height="37"/>
+                                <color key="backgroundColor" red="0.076379589736461639" green="0.80963557958602905" blue="0.49176561832427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="hd0-c4-VdU"/>
+                                </constraints>
+                                <state key="normal" title="Completed!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -526,8 +536,10 @@
                             <constraint firstItem="ASt-hz-6Cp" firstAttribute="top" secondItem="Hdk-DI-gjs" secondAttribute="bottom" constant="17" id="4E6-yZ-7vO"/>
                             <constraint firstItem="Hdk-DI-gjs" firstAttribute="top" secondItem="jqi-H0-hK6" secondAttribute="bottom" constant="8" id="B92-aW-XNy"/>
                             <constraint firstItem="VoA-gT-tZj" firstAttribute="top" secondItem="Hdk-DI-gjs" secondAttribute="bottom" constant="22" id="CTB-7q-dvy"/>
+                            <constraint firstItem="afS-XO-5uT" firstAttribute="top" secondItem="pKq-gA-otT" secondAttribute="bottom" constant="8" symbolic="YES" id="EMJ-4P-yl1"/>
                             <constraint firstItem="IwE-QY-ADI" firstAttribute="top" secondItem="Hdk-DI-gjs" secondAttribute="bottom" constant="21" id="F7s-dQ-4kM"/>
                             <constraint firstItem="pKq-gA-otT" firstAttribute="top" secondItem="Hdk-DI-gjs" secondAttribute="bottom" constant="13" id="Vns-o9-0AT"/>
+                            <constraint firstItem="afS-XO-5uT" firstAttribute="leading" secondItem="Edv-uq-Yy4" secondAttribute="leading" constant="143" id="WHm-vt-86i"/>
                             <constraint firstItem="VoA-gT-tZj" firstAttribute="leading" secondItem="Edv-uq-Yy4" secondAttribute="leading" constant="16" id="X3V-A9-0en"/>
                             <constraint firstItem="usL-D4-HN5" firstAttribute="top" secondItem="Edv-uq-Yy4" secondAttribute="top" constant="17" id="XBt-m4-1ZP"/>
                             <constraint firstItem="ZL5-3N-Dza" firstAttribute="top" secondItem="tgN-4w-vbh" secondAttribute="bottom" constant="8" id="Xu2-zI-dvo"/>
@@ -545,11 +557,14 @@
                         <viewLayoutGuide key="safeArea" id="Edv-uq-Yy4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Milestone" id="N9L-EL-rZv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8ck-JS-bW0">
-                            <connections>
-                                <action selector="donePressed:" destination="xJL-ve-btw" id="ef0-IO-A9G"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="done" id="8ck-JS-bW0">
+                                <connections>
+                                    <action selector="donePressed:" destination="xJL-ve-btw" id="ef0-IO-A9G"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="OwJ-nJ-uas"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="endDatePicker" destination="Hdk-DI-gjs" id="eXe-gx-Nxk"/>
@@ -561,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpj-43-mFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3687" y="1179"/>
+            <point key="canvasLocation" x="3685.5999999999999" y="1178.5714285714287"/>
         </scene>
         <!--Edit Goal-->
         <scene sceneID="dGm-dq-C2V">
