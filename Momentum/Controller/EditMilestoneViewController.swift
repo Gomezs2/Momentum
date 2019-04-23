@@ -84,7 +84,8 @@ class EditMilestoneViewController: UIViewController {
             "startDate" : updateStartDate(),
             "endDate" : updateEndDate(),
             "reminderValue" : updateReminderValue(),
-            "reminderLength" : updateReminderLength()
+            "reminderLength" : updateReminderLength(),
+            "completed" : milestoneData!.completed
         ]
         
         let childUpdates = ["\(milestoneData!.key)" : updatedData]
