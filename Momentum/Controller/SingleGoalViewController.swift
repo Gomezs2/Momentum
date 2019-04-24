@@ -12,6 +12,7 @@ import Firebase
 class SingleGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var goalDate: UILabel!
+    @IBOutlet weak var goalProgress: UIProgressView!
     @IBOutlet weak var milestonesTableView: UITableView!
     
     // Goal data passed in by segue
@@ -23,6 +24,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         self.title = goalData?.name
         goalDate.text = goalData?.endDate
+        
+        self.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 8)
         
         // Table View
         milestonesTableView.delegate = self
