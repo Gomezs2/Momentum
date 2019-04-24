@@ -16,6 +16,7 @@ class Milestone {
     var endDate: String = ""
     var reminderValue : String = ""
     var reminderLength : String = ""
+    var completed : String = ""
     
     init(milestoneKey: String, name: String, startDate: String , endDate: String, reminderValue: String, reminderLength : String) {
         self.key = milestoneKey
@@ -24,6 +25,7 @@ class Milestone {
         self.endDate = endDate
         self.reminderValue = reminderValue
         self.reminderLength = reminderLength
+        self.completed = "false"
     }
 }
 

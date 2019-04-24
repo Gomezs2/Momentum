@@ -91,7 +91,8 @@ class CreateMilestoneViewController: UIViewController {
             "startDate" : selectedStartDate,
             "endDate" : selectedEndDate,
             "reminderValue" : remindTimeField.text!,
-            "reminderLength" : reminderOption
+            "reminderLength" : reminderOption,
+            "completed" : "false"
         ]
         
         milestoneDB.child(key).setValue(milestoneData) {
