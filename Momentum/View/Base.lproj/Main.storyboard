@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v33-Ax-vdM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v33-Ax-vdM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -182,33 +182,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-JJ-5dv">
-                                <rect key="frame" x="42" y="204" width="291" height="73"/>
-                                <color key="backgroundColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p5c-4X-sgw">
-                                    <rect key="frame" x="0.0" y="43" width="291" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="15" id="esm-04-EsM">
-                                        <rect key="frame" x="0.0" y="28" width="291" height="15"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="esm-04-EsM" id="Cgd-Jx-Ppv">
-                                            <rect key="frame" x="0.0" y="0.0" width="291" height="14.666666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.01344983187" green="0.81944334510000005" blue="0.65894800419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milestones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2J-i1-ftA">
-                                <rect key="frame" x="87" y="297" width="201" height="53"/>
+                                <rect key="frame" x="87" y="297" width="117" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="9Ya-Xf-Ipi"/>
                                 </constraints>
@@ -216,7 +191,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-IS-E6c">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-IS-E6c">
                                 <rect key="frame" x="42" y="341" width="291" height="335"/>
                                 <color key="backgroundColor" red="0.92560110650000005" green="0.93476547389999998" blue="0.93476547389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.01344983187" green="0.81944334510000005" blue="0.65894800419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,7 +226,7 @@
                                     <outlet property="delegate" destination="5Kp-Cr-dKY" id="cuW-me-gDC"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-D9-XNr">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-D9-XNr">
                                 <rect key="frame" x="42" y="297" width="55" height="44"/>
                                 <color key="backgroundColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -266,7 +241,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-30-CyR">
+                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-30-CyR">
                                 <rect key="frame" x="275" y="297" width="58" height="44"/>
                                 <color key="backgroundColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -283,26 +258,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-hL-KTE">
+                                <rect key="frame" x="42" y="208" width="291" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="t9v-Xo-yA4" firstAttribute="trailing" secondItem="2Lz-JJ-5dv" secondAttribute="trailing" id="57u-ZD-VZL"/>
                             <constraint firstItem="nVH-IS-E6c" firstAttribute="top" secondItem="SAt-D9-XNr" secondAttribute="bottom" id="7Ye-0D-Y2g"/>
                             <constraint firstItem="K2J-i1-ftA" firstAttribute="top" secondItem="aCJ-30-CyR" secondAttribute="top" id="Dha-G5-OOp"/>
                             <constraint firstItem="Af2-19-zJI" firstAttribute="bottom" secondItem="K2J-i1-ftA" secondAttribute="bottom" constant="379" id="Ivh-oq-lRy"/>
-                            <constraint firstItem="2Lz-JJ-5dv" firstAttribute="leading" secondItem="SAt-D9-XNr" secondAttribute="leading" id="KTV-Dh-u3k"/>
-                            <constraint firstItem="2Lz-JJ-5dv" firstAttribute="centerX" secondItem="K2J-i1-ftA" secondAttribute="centerX" id="TYC-Ht-11L"/>
                             <constraint firstItem="K2J-i1-ftA" firstAttribute="leading" secondItem="Af2-19-zJI" secondAttribute="leading" constant="87" id="U8g-mK-3XD"/>
                             <constraint firstItem="t9v-Xo-yA4" firstAttribute="centerX" secondItem="vkZ-la-c42" secondAttribute="centerX" id="UpG-Fx-xn6"/>
-                            <constraint firstItem="t9v-Xo-yA4" firstAttribute="leading" secondItem="2Lz-JJ-5dv" secondAttribute="leading" id="VIO-Zh-3Nl"/>
                             <constraint firstItem="SAt-D9-XNr" firstAttribute="top" secondItem="K2J-i1-ftA" secondAttribute="top" id="W6q-x1-IJ5"/>
                             <constraint firstItem="aCJ-30-CyR" firstAttribute="trailing" secondItem="nVH-IS-E6c" secondAttribute="trailing" id="ZQv-4v-jSb"/>
                             <constraint firstItem="SAt-D9-XNr" firstAttribute="leading" secondItem="nVH-IS-E6c" secondAttribute="leading" id="ap5-eG-OdY"/>
-                            <constraint firstItem="2Lz-JJ-5dv" firstAttribute="top" secondItem="t9v-Xo-yA4" secondAttribute="bottom" constant="50" id="baL-JP-a0k"/>
-                            <constraint firstItem="SAt-D9-XNr" firstAttribute="top" secondItem="2Lz-JJ-5dv" secondAttribute="bottom" constant="20" id="eiR-aX-f23"/>
                             <constraint firstItem="t9v-Xo-yA4" firstAttribute="top" secondItem="Af2-19-zJI" secondAttribute="top" constant="45" id="fGL-zl-xvA"/>
                             <constraint firstItem="Af2-19-zJI" firstAttribute="bottom" secondItem="nVH-IS-E6c" secondAttribute="bottom" constant="53" id="rMV-el-LzX"/>
-                            <constraint firstItem="2Lz-JJ-5dv" firstAttribute="trailing" secondItem="aCJ-30-CyR" secondAttribute="trailing" id="s3X-6z-Nvc"/>
                             <constraint firstItem="t9v-Xo-yA4" firstAttribute="leading" secondItem="Af2-19-zJI" secondAttribute="leading" constant="42" id="s7f-Zb-fQM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Af2-19-zJI"/>
@@ -318,12 +290,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="goalDate" destination="t9v-Xo-yA4" id="Hdn-hl-zX0"/>
+                        <outlet property="goalProgress" destination="ZsD-hL-KTE" id="rAF-BR-UyL"/>
                         <outlet property="milestonesTableView" destination="nVH-IS-E6c" id="5Vr-II-Ag1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkB-39-wpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="428"/>
+            <point key="canvasLocation" x="2804" y="427.83251231527095"/>
         </scene>
         <!--Create Milestone View Controller-->
         <scene sceneID="5el-P5-LV7">
