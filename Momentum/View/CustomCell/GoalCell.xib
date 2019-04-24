@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-P5-b0I">
-                        <rect key="frame" x="16" y="0.0" width="72" height="22"/>
+                        <rect key="frame" x="16" y="0.0" width="292" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                         <nil key="textColor"/>
@@ -49,7 +49,7 @@
                 <outlet property="progress" destination="P2S-Gp-Ynu" id="9Xk-Rl-FPQ"/>
                 <outlet property="title" destination="8gg-P5-b0I" id="s5z-qs-ekv"/>
             </connections>
-            <point key="canvasLocation" x="-278.39999999999998" y="-38.680659670164921"/>
+            <point key="canvasLocation" x="-279" y="-39.5"/>
         </tableViewCell>
     </objects>
 </document>
