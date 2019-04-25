@@ -19,6 +19,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
     var goalData: Goal?
     var milestoneArray : [Milestone] = [Milestone]()
     var rowChoosen = 0
+    var completed_milestones = 0
+    var total_milestones = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,6 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         goalDate.text = goalData?.endDate
         
         self.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 8)
-        self.goalProgress.progress = calculateProgress()
         
         // Table View
         milestonesTableView.delegate = self
@@ -34,6 +35,10 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         milestonesTableView.register(UINib(nibName:"MilestoneCell", bundle: nil), forCellReuseIdentifier: "customMilestoneCell")
         
         retrieveMilestones()
+        
+        if total_milestones == 0 {
+            self.goalProgress.progress = 0.0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,8 +49,12 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
 
         if milestoneArray[indexPath.row].completed == "true" {
             cell.backgroundColor = UIColor.green
+            self.completed_milestones += 1
         }
-
+        self.total_milestones += 1
+        
+        self.goalProgress.progress = Float(self.completed_milestones) / Float(self.total_milestones)
+    
         return cell
     }
     
@@ -142,21 +151,4 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             destVC.milestoneData = milestoneArray[rowChoosen]
         }
     }
-    
-    func calculateProgress() -> Float {
-        if self.milestoneArray.count == 0 {
-            return 0.0
-        }
-        
-        var completed_count = 0
-        
-        for milestone in self.milestoneArray {
-            if milestone.completed == "true" {
-                completed_count = completed_count + 1
-            }
-        }
-        
-        return Float(completed_count/self.milestoneArray.count)
-    }
-    
 }
