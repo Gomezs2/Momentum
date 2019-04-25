@@ -10,7 +10,8 @@ import UIKit
 
 class GoalsTableViewCell: UITableViewCell {    
     
-    @IBOutlet weak var progress: UIProgressView!
+    
+    @IBOutlet weak var daysRemain: UILabel!
     
     @IBOutlet weak var title: UILabel!
     
