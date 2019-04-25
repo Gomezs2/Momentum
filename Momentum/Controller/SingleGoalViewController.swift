@@ -35,6 +35,10 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         milestonesTableView.register(UINib(nibName:"MilestoneCell", bundle: nil), forCellReuseIdentifier: "customMilestoneCell")
         
         retrieveMilestones()
+        
+        if total_milestones == 0 {
+            self.goalProgress.progress = 0.0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
