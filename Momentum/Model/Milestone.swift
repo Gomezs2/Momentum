@@ -18,14 +18,14 @@ class Milestone {
     var reminderLength : String = ""
     var completed : String = ""
     
-    init(milestoneKey: String, name: String, startDate: String , endDate: String, reminderValue: String, reminderLength : String) {
+    init(milestoneKey: String, name: String, startDate: String , endDate: String, reminderValue: String, reminderLength : String, completed : String) {
         self.key = milestoneKey
         self.name = name
         self.startDate = startDate
         self.endDate = endDate
         self.reminderValue = reminderValue
         self.reminderLength = reminderLength
-        self.completed = "false"
+        self.completed = completed
     }
 }
 

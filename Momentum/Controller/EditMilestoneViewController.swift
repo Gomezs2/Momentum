@@ -85,7 +85,7 @@ class EditMilestoneViewController: UIViewController {
             "endDate" : updateEndDate(),
             "reminderValue" : updateReminderValue(),
             "reminderLength" : updateReminderLength(),
-            "completed" : milestoneData!.completed
+            "completed" : milestoneData!.completed // should be false
         ]
         
         let childUpdates = ["\(milestoneData!.key)" : updatedData]
@@ -101,6 +101,26 @@ class EditMilestoneViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         updateMilestone()
+    }
+    
+    func completeMilestone() {
+        let milestoneDB = Database.database().reference().child("Milestones")
+        let updatedData = [
+            "name" : updateName(),
+            "startDate" : updateStartDate(),
+            "endDate" : updateEndDate(),
+            "reminderValue" : updateReminderValue(),
+            "reminderLength" : updateReminderLength(),
+            "completed" : "true"
+        ]
+        
+        let childUpdates = ["\(milestoneData!.key)" : updatedData]
+        milestoneDB.updateChildValues(childUpdates)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func completePressed(_ sender: Any) {
+        completeMilestone()
     }
 }
 
