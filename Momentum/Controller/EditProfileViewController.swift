@@ -14,7 +14,7 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+
     @IBOutlet weak var newPasswordField: UITextField!
     @IBOutlet weak var reNewPasswordField: UITextField!
     
@@ -25,7 +25,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text! = name
         emailLabel.text! = email
-        passwordField.text! = "Deleting soon"
+
     }
     
     func createAlert(errorMessage: String){
