@@ -49,12 +49,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         }
         self.total_milestones += 1
         
-        
-        
         self.goalProgress.progress = Float(self.completed_milestones) / Float(self.total_milestones)
     
-        print(Float(self.completed_milestones) / Float(self.total_milestones))
-
         return cell
     }
     
