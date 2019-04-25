@@ -19,6 +19,8 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
     var goalData: Goal?
     var milestoneArray : [Milestone] = [Milestone]()
     var rowChoosen = 0
+    var completed_milestones = 0
+    var total_milestones = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,6 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         goalDate.text = goalData?.endDate
         
         self.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 8)
-        self.goalProgress.progress = calculateProgress()
         
         // Table View
         milestonesTableView.delegate = self
@@ -41,6 +42,19 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         cell.title.text = milestoneArray[indexPath.row].name
         cell.endDate.text =  milestoneArray[indexPath.row].endDate
         cell.startDate.text = milestoneArray[indexPath.row].startDate
+
+        if milestoneArray[indexPath.row].completed == "true" {
+            cell.backgroundColor = UIColor.green
+            self.completed_milestones += 1
+        }
+        self.total_milestones += 1
+        
+        
+        
+        self.goalProgress.progress = Float(self.completed_milestones) / Float(self.total_milestones)
+    
+        print(Float(self.completed_milestones) / Float(self.total_milestones))
+
         return cell
     }
     
@@ -71,8 +85,9 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             let milestoneEndDate = snapshotValue["endDate"]! as! String
             let milestoneReminderValue = snapshotValue["reminderValue"]! as! String
             let milestoneReminderLength = snapshotValue["reminderLength"]! as! String
-          
-            let milestone = Milestone(milestoneKey: snapshot.key, name: milestoneName, startDate: milestoneStartDate, endDate: milestoneEndDate, reminderValue: milestoneReminderValue, reminderLength: milestoneReminderLength)
+            let milestoneCompleted = snapshotValue["completed"]! as! String
+            
+            let milestone = Milestone(milestoneKey: snapshot.key, name: milestoneName, startDate: milestoneStartDate, endDate: milestoneEndDate, reminderValue: milestoneReminderValue, reminderLength: milestoneReminderLength, completed: milestoneCompleted)
             
             self.milestoneArray.append(milestone)
             self.milestonesTableView.reloadData()
@@ -113,6 +128,7 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
                     milestone.endDate = snapshotValue["endDate"]! as! String
                     milestone.reminderValue = snapshotValue["reminderValue"]! as! String
                     milestone.reminderLength = snapshotValue["reminderLength"]! as! String
+                    milestone.completed = snapshotValue["completed"]! as! String
                     break
                 }
             }
@@ -135,21 +151,4 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             destVC.milestoneData = milestoneArray[rowChoosen]
         }
     }
-    
-    func calculateProgress() -> Float {
-        if self.milestoneArray.count == 0 {
-            return 0.0
-        }
-        
-        var completed_count = 0
-        
-        for milestone in self.milestoneArray {
-            if milestone.completed == "true" {
-                completed_count = completed_count + 1
-            }
-        }
-        
-        return Float(completed_count/self.milestoneArray.count)
-    }
-    
 }
