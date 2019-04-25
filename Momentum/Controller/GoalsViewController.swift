@@ -152,9 +152,9 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
             let remain: String = String(endYear - currentYear)
             
             if remain == "1" {
-                return remain + "year left"
+                return remain + "Year left"
             } else {
-                return remain + " years left"
+                return remain + " Years left"
             }
             
         } else if Int(endDateArray[0]) != dateTimeComponents.month {
@@ -182,15 +182,15 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
                     remaindays += numDays
                     
                     if remaindays == 1 {
-                        return String(remaindays) + " day left"
+                        return String(remaindays) + " Day left"
                     } else {
-                        return String(remaindays) + " days left"
+                        return String(remaindays) + " Days left"
                     }
                     
                 }
-                return String(remain) + " month left"
+                return String(remain) + " Month left"
             } else {
-                return String(remain) + " months left"
+                return String(remain) + " Months left"
             }
             
         } else if Int(endDateArray[1]) != dateTimeComponents.day{
@@ -199,9 +199,9 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
             let remain: Int = Int(endDay - currentDay)
             
             if remain == 1 {
-                return String(remain) + " day left"
+                return String(remain) + " Day left"
             } else {
-                return String(remain) + " days left"
+                return String(remain) + " Days left"
             }
             
         } else {
