@@ -39,6 +39,9 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMilestoneCell", for: indexPath) as! MilestonesTableViewCell
         cell.title.text = milestoneArray[indexPath.row].name
         cell.endDate.text =  milestoneArray[indexPath.row].endDate
+        if milestoneArray[indexPath.row].completed == "true" {
+            cell.backgroundColor = UIColor.green
+        }
         return cell
     }
     
@@ -64,18 +67,13 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             let snapshotValue = snapshot.value as! Dictionary<String,Any>
-            let milestoneCompleted = snapshotValue["completed"]! as! String
-            if milestoneCompleted == "true" {
-                // check if milestone is complete; if so, don't add to table
-                return
-            }
-            
             let milestoneName = snapshotValue["name"]! as! String
             let milestoneStartDate = snapshotValue["startDate"]! as! String
             let milestoneEndDate = snapshotValue["endDate"]! as! String
             let milestoneReminderValue = snapshotValue["reminderValue"]! as! String
             let milestoneReminderLength = snapshotValue["reminderLength"]! as! String
-          
+            let milestoneCompleted = snapshotValue["completed"]! as! String
+            
             let milestone = Milestone(milestoneKey: snapshot.key, name: milestoneName, startDate: milestoneStartDate, endDate: milestoneEndDate, reminderValue: milestoneReminderValue, reminderLength: milestoneReminderLength, completed: milestoneCompleted)
             
             self.milestoneArray.append(milestone)
@@ -112,13 +110,6 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             let snapshotValue = snapshot.value as! Dictionary<String, Any>
             for (i, milestone) in (self.milestoneArray).enumerated() {
                 if milestone.key == snapshot.key {
-                    milestone.completed = snapshotValue["completed"]! as! String
-                    // check if the milestone was marked as completed
-                    if milestone.completed == "true" {
-                        // don't have to update milestone's fields in the view, just remove from milestones table
-                        self.milestoneArray.remove(at: i)
-                        break
-                    }
                     milestone.name = snapshotValue["name"]! as! String
                     milestone.startDate = snapshotValue["startDate"]! as! String
                     milestone.endDate = snapshotValue["endDate"]! as! String
