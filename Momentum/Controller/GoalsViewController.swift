@@ -28,16 +28,12 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         goalsTableView.separatorStyle = .none
     }
     
-    func designCell(cell: GoalsTableViewCell) {
-        cell.progress.transform = CGAffineTransform(scaleX: 1, y: 8)
-    }
     
     // Init cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customGoalCell", for: indexPath) as! GoalsTableViewCell
         
-        designCell(cell:cell)
-        
+        cell.daysRemain.text = calculateDaysRemain(goal: goalArray[indexPath.row])
         cell.title.text = goalArray[indexPath.row].name
         return cell
     }
@@ -131,4 +127,85 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func calculateDaysRemain(goal: Goal) -> String {
+        let today = Date()
+        let userCalendar = Calendar.current
+        
+        let requestedComponents: Set<Calendar.Component> = [
+            .year,
+            .month,
+            .day
+        ]
+        
+        let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: today)
+        
+        print(today)
+        print(goal.endDate)
+        
+        let endDateArray = goal.endDate.components(separatedBy: "/")
+        
+        let endYear = "20" + endDateArray[2]
+        
+        if Int(endYear) != dateTimeComponents.year {
+            let endYear: Int = Int(endYear)!
+            let currentYear: Int = dateTimeComponents.year!
+            let remain: String = String(endYear - currentYear)
+            
+            if remain == "1" {
+                return remain + "Year left"
+            } else {
+                return remain + " Years left"
+            }
+            
+        } else if Int(endDateArray[0]) != dateTimeComponents.month {
+            let endMonth: Int = Int(endDateArray[0])!
+            let currentMonth: Int = dateTimeComponents.month!
+            var remain: Int = Int(endMonth - currentMonth)
+            
+            let endDay: Int = Int(endDateArray[1])!
+            let currentDay: Int = dateTimeComponents.day!
+            var remaindays: Int = Int(endDay - currentDay)
+            
+            if remain < 0 {
+                remain += 12
+            }
+            
+            if remain == 1 {
+                if remaindays < 0 {
+                    let dateComponents = DateComponents(year: Int(endDateArray[2]), month: Int(endDateArray[0]))
+                    let calendar = Calendar.current
+                    let date = calendar.date(from: dateComponents)!
+                    
+                    let range = calendar.range(of: .day, in: .month, for:date)!
+                    let numDays = range.count
+                    
+                    remaindays += numDays
+                    
+                    if remaindays == 1 {
+                        return String(remaindays) + " Day left"
+                    } else {
+                        return String(remaindays) + " Days left"
+                    }
+                    
+                }
+                return String(remain) + " Month left"
+            } else {
+                return String(remain) + " Months left"
+            }
+            
+        } else if Int(endDateArray[1]) != dateTimeComponents.day{
+            let endDay: Int = Int(endDateArray[1])!
+            let currentDay: Int = dateTimeComponents.day!
+            let remain: Int = Int(endDay - currentDay)
+            
+            if remain == 1 {
+                return String(remain) + " Day left"
+            } else {
+                return String(remain) + " Days left"
+            }
+            
+        } else {
+            return "Due Today!"
+        }
+    }
 }

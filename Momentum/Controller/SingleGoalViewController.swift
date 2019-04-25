@@ -26,6 +26,7 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         goalDate.text = goalData?.endDate
         
         self.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 8)
+        self.goalProgress.progress = calculateProgress()
         
         // Table View
         milestonesTableView.delegate = self
@@ -39,9 +40,12 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMilestoneCell", for: indexPath) as! MilestonesTableViewCell
         cell.title.text = milestoneArray[indexPath.row].name
         cell.endDate.text =  milestoneArray[indexPath.row].endDate
+        cell.startDate.text = milestoneArray[indexPath.row].startDate
+
         if milestoneArray[indexPath.row].completed == "true" {
             cell.backgroundColor = UIColor.green
         }
+
         return cell
     }
     
@@ -137,6 +141,22 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             let destVC = segue.destination as! EditMilestoneViewController
             destVC.milestoneData = milestoneArray[rowChoosen]
         }
+    }
+    
+    func calculateProgress() -> Float {
+        if self.milestoneArray.count == 0 {
+            return 0.0
+        }
+        
+        var completed_count = 0
+        
+        for milestone in self.milestoneArray {
+            if milestone.completed == "true" {
+                completed_count = completed_count + 1
+            }
+        }
+        
+        return Float(completed_count/self.milestoneArray.count)
     }
     
 }
