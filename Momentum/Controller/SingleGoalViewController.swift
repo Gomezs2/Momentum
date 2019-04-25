@@ -39,6 +39,9 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMilestoneCell", for: indexPath) as! MilestonesTableViewCell
         cell.title.text = milestoneArray[indexPath.row].name
         cell.endDate.text =  milestoneArray[indexPath.row].endDate
+        if milestoneArray[indexPath.row].completed == "true" {
+            cell.backgroundColor = UIColor.green
+        }
         return cell
     }
     
@@ -69,8 +72,9 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             let milestoneEndDate = snapshotValue["endDate"]! as! String
             let milestoneReminderValue = snapshotValue["reminderValue"]! as! String
             let milestoneReminderLength = snapshotValue["reminderLength"]! as! String
-          
-            let milestone = Milestone(milestoneKey: snapshot.key, name: milestoneName, startDate: milestoneStartDate, endDate: milestoneEndDate, reminderValue: milestoneReminderValue, reminderLength: milestoneReminderLength)
+            let milestoneCompleted = snapshotValue["completed"]! as! String
+            
+            let milestone = Milestone(milestoneKey: snapshot.key, name: milestoneName, startDate: milestoneStartDate, endDate: milestoneEndDate, reminderValue: milestoneReminderValue, reminderLength: milestoneReminderLength, completed: milestoneCompleted)
             
             self.milestoneArray.append(milestone)
             self.milestonesTableView.reloadData()
@@ -111,6 +115,7 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
                     milestone.endDate = snapshotValue["endDate"]! as! String
                     milestone.reminderValue = snapshotValue["reminderValue"]! as! String
                     milestone.reminderLength = snapshotValue["reminderLength"]! as! String
+                    milestone.completed = snapshotValue["completed"]! as! String
                     break
                 }
             }
