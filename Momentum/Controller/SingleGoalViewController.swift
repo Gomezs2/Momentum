@@ -108,7 +108,7 @@ class SingleGoalViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             let snapshotValue = snapshot.value as! Dictionary<String, Any>
-            for (i, milestone) in (self.milestoneArray).enumerated() {
+            for milestone in self.milestoneArray {
                 if milestone.key == snapshot.key {
                     milestone.name = snapshotValue["name"]! as! String
                     milestone.startDate = snapshotValue["startDate"]! as! String
