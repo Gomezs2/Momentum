@@ -157,27 +157,44 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 return remain + " years left"
             }
             
-        } else if Int(endDateArray[0]) != dateTimeComponents.month {
-            let endMonth: Int = Int(endDateArray[0])!
-            let currentMonth: Int = dateTimeComponents.month!
-            let remain: String = String(endMonth - currentMonth)
-            
-            if remain == "1" {
-                return remain + " month left"
-            } else {
-                return remain + " months left"
-            }
-            
         } else if Int(endDateArray[1]) != dateTimeComponents.day{
             let endDay: Int = Int(endDateArray[1])!
             let currentDay: Int = dateTimeComponents.day!
-            let remain: String = String(endDay - currentDay)
+            var remain: Int = Int(endDay - currentDay)
             
-            if remain == "1" {
-                return remain + " day left"
-            } else {
-                return remain + " days left"
+            if remain < 0 {
+                let dateComponents = DateComponents(year: Int(endDateArray[2]), month: Int(endDateArray[0]))
+                let calendar = Calendar.current
+                let date = calendar.date(from: dateComponents)!
+                
+                let range = calendar.range(of: .day, in: .month, for:date)!
+                let numDays = range.count
+                
+                remain += numDays
             }
+            
+            if remain == 1 {
+                return String(remain) + " day left"
+            } else {
+                return String(remain) + " days left"
+            }
+            
+        } else if Int(endDateArray[0]) != dateTimeComponents.month {
+            let endMonth: Int = Int(endDateArray[0])!
+            let currentMonth: Int = dateTimeComponents.month!
+            var remain: Int = Int(endMonth - currentMonth)
+            
+            if remain < 0 {
+                remain += 12
+            }
+            
+            if remain == 1 {
+                return String(remain) + " month left"
+            } else {
+                return String(remain) + " months left"
+            }
+            
+        
             
         } else {
             return "Due Today!"
