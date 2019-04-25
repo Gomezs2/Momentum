@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11V-BS-nod">
-                                <rect key="frame" x="149" y="114" width="117" height="53"/>
+                                <rect key="frame" x="121" y="115" width="138" height="53"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -278,24 +278,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.89404886959999996" green="0.89415633679999995" blue="0.89401233199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="11V-BS-nod" firstAttribute="centerX" secondItem="vkZ-la-c42" secondAttribute="centerX" id="0k8-1Z-XSS"/>
+                            <constraint firstItem="11V-BS-nod" firstAttribute="centerX" secondItem="vkZ-la-c42" secondAttribute="centerX" constant="-17" id="0k8-1Z-XSS"/>
                             <constraint firstItem="GvS-CG-xPK" firstAttribute="baseline" secondItem="t9v-Xo-yA4" secondAttribute="baseline" id="3NI-G4-qv6"/>
                             <constraint firstItem="GvS-CG-xPK" firstAttribute="top" secondItem="Af2-19-zJI" secondAttribute="top" constant="21" id="5XD-XY-3hz"/>
                             <constraint firstItem="GvS-CG-xPK" firstAttribute="firstBaseline" secondItem="t9v-Xo-yA4" secondAttribute="firstBaseline" id="5nC-5d-ZO9"/>
                             <constraint firstItem="SAt-D9-XNr" firstAttribute="top" secondItem="ZsD-hL-KTE" secondAttribute="bottom" constant="48" id="74F-cy-AWN"/>
                             <constraint firstItem="ZsD-hL-KTE" firstAttribute="leading" secondItem="SAt-D9-XNr" secondAttribute="leading" id="AF8-1L-m9g"/>
                             <constraint firstItem="K2J-i1-ftA" firstAttribute="trailing" secondItem="nVH-IS-E6c" secondAttribute="trailing" id="AI9-z3-ZRQ"/>
-                            <constraint firstItem="11V-BS-nod" firstAttribute="centerX" secondItem="ZsD-hL-KTE" secondAttribute="centerX" id="Gjs-Za-P97"/>
+                            <constraint firstItem="11V-BS-nod" firstAttribute="centerX" secondItem="ZsD-hL-KTE" secondAttribute="centerX" constant="-17" id="Gjs-Za-P97"/>
                             <constraint firstItem="ZsD-hL-KTE" firstAttribute="trailing" secondItem="K2J-i1-ftA" secondAttribute="trailing" id="LUp-yW-cNk"/>
                             <constraint firstItem="t9v-Xo-yA4" firstAttribute="leading" secondItem="GvS-CG-xPK" secondAttribute="trailing" constant="8" symbolic="YES" id="ODo-g2-ytv"/>
-                            <constraint firstItem="11V-BS-nod" firstAttribute="leading" secondItem="Af2-19-zJI" secondAttribute="leading" constant="149" id="RaX-UL-0ec"/>
+                            <constraint firstItem="11V-BS-nod" firstAttribute="leading" secondItem="Af2-19-zJI" secondAttribute="leading" constant="121" id="RaX-UL-0ec"/>
                             <constraint firstItem="K2J-i1-ftA" firstAttribute="leading" secondItem="SAt-D9-XNr" secondAttribute="trailing" id="Uif-Ca-WPo"/>
                             <constraint firstItem="Af2-19-zJI" firstAttribute="bottom" secondItem="nVH-IS-E6c" secondAttribute="bottom" constant="11" id="f9g-wH-qjX"/>
                             <constraint firstItem="GvS-CG-xPK" firstAttribute="leading" secondItem="Af2-19-zJI" secondAttribute="leading" constant="42" id="fJt-UJ-oAt"/>
                             <constraint firstItem="GvS-CG-xPK" firstAttribute="leading" secondItem="ZsD-hL-KTE" secondAttribute="leading" id="jdU-9D-S4e"/>
                             <constraint firstItem="nVH-IS-E6c" firstAttribute="top" secondItem="SAt-D9-XNr" secondAttribute="bottom" id="kFs-vT-nFk"/>
-                            <constraint firstItem="ZsD-hL-KTE" firstAttribute="top" secondItem="11V-BS-nod" secondAttribute="bottom" constant="9" id="mmc-Ce-g5r"/>
-                            <constraint firstItem="11V-BS-nod" firstAttribute="top" secondItem="t9v-Xo-yA4" secondAttribute="bottom" constant="8" symbolic="YES" id="n4I-Ts-EZV"/>
+                            <constraint firstItem="ZsD-hL-KTE" firstAttribute="top" secondItem="11V-BS-nod" secondAttribute="bottom" constant="8" id="mmc-Ce-g5r"/>
+                            <constraint firstItem="11V-BS-nod" firstAttribute="top" secondItem="t9v-Xo-yA4" secondAttribute="bottom" constant="9" id="n4I-Ts-EZV"/>
                             <constraint firstItem="ZsD-hL-KTE" firstAttribute="top" secondItem="GvS-CG-xPK" secondAttribute="bottom" constant="70" id="rAD-q4-6c1"/>
                             <constraint firstItem="SAt-D9-XNr" firstAttribute="top" secondItem="K2J-i1-ftA" secondAttribute="top" id="roj-Z1-aZJ"/>
                             <constraint firstItem="SAt-D9-XNr" firstAttribute="bottom" secondItem="K2J-i1-ftA" secondAttribute="bottom" id="tpw-hA-5qE"/>
