@@ -14,5 +14,6 @@ class MilestonesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var endDate: UILabel!
     
+    @IBOutlet weak var startDate: UILabel!
     
 }
