@@ -93,12 +93,6 @@ class EditMilestoneViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func deleteMilestone() {
-        let milestoneToDel = Database.database().reference().child("Milestones").child("\(milestoneData!.key)")
-        milestoneToDel.removeValue()
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     @IBAction func donePressed(_ sender: Any) {
         updateMilestone()
     }
@@ -122,6 +116,17 @@ class EditMilestoneViewController: UIViewController {
     @IBAction func completePressed(_ sender: Any) {
         completeMilestone()
     }
+    
+    func deleteMilestone() {
+        let milestoneToDel = Database.database().reference().child("Milestones").child("\(milestoneData!.key)")
+        milestoneToDel.removeValue()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        deleteMilestone()
+    }
+    
 }
 
 extension EditMilestoneViewController: UIPickerViewDelegate, UIPickerViewDataSource{
