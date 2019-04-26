@@ -70,6 +70,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - SVProgressHUD (2.2.5)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - ChameleonFramework
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - SVProgressHUD
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -94,6 +96,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - SVProgressHUD
+    - SwiftLint
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -110,7 +113,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: f6b35110a81ad77bd792650739a1de2fbd2cbfc0
+PODFILE CHECKSUM: f70f9c6213672cf4f1b729c70d0ad7f2d8b7c912
 
 COCOAPODS: 1.6.1
