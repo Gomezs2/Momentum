@@ -10,6 +10,7 @@ target 'Momentum' do
     pod 'Firebase/Database'
     pod 'SVProgressHUD'
     pod 'ChameleonFramework'
+    pod 'SwiftLint'
 end
 
 post_install do |installer|
